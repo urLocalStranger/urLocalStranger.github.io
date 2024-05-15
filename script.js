@@ -55,7 +55,9 @@ function dChateau(f2, d12, hi2, di2, hChateau){
 function kRessort(m, v, d, hChateau){
   let ekf = ek(m, v, "mve");
   let epf = ep(m, 9.8, hChateau/2, "mghe");
+  console.log("Ep = " + epf);
   let em = ekf + epf; //Aussi epr
+  console.log("Em = " + em);
   return epr(em, d, "exk");
 }
 
@@ -73,12 +75,11 @@ function tCordes(m, coeff, angle1, angle2, anglePente){
 function dLentille(forme, r1, r2, vr, h){
   let r12 = rayons((r1/100), (r2/100), forme);
   let vr1 = 0.52 * ((1/r12[0])+(1/r12[1]));
+  console.log("C1 = " + vr1);
   let vrt = vr1 + vr;
+  console.log("Ctot = " + vrt);
   let f = 1 / vrt;
-  if(forme == "biconcave" || forme == "ménisque divergeant"){
-    f = -f;
-  }
-  return -f * ((0.3 - h) / h);
+  return ((0.3 / h) + 1) * f;
 }
 
 
@@ -100,7 +101,6 @@ function cos(angle){
 }
 
 function rayons(r1, r2, forme){
-  console.log(forme.trim().toLowerCase());
   switch (forme.trim().toLowerCase()){
     case "biconvexe":
       return [r1, r2];
