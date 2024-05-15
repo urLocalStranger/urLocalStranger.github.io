@@ -34,7 +34,7 @@ function calculs(){
   document.getElementById("b").innerText = `no2: ${dC} m`;
   document.getElementById("c").innerText = `no3: ${kR}`;
   document.getElementById("d").innerText = `no4: t1 = ${Math.round(tC[0] * 100)/100} N\nt2 = ${Math.round(tC[1] * 100)/100} N`;
-  document.getElementById("e").innerText = `no5: Distance lentille = ${dl} m`;
+  document.getElementById("e").innerText = `no5: ${dl} m`;
   document.getElementById("intror").innerText = "Et voici les résultats!";
   window.scrollTo(0,0);
 }
@@ -54,7 +54,7 @@ function dChateau(f2, d12, hi2, di2, hChateau){
 
 function kRessort(m, v, d, hChateau){
   let ekf = ek(m, v, "mve");
-  let epf = ep(m, 9.8, hChateau, "mghe");
+  let epf = ep(m, 9.8, hChateau/2, "mghe");
   let em = ekf + epf; //Aussi epr
   return epr(em, d, "exk");
 }
@@ -72,11 +72,12 @@ function tCordes(m, coeff, angle1, angle2, anglePente){
 
 function dLentille(forme, r1, r2, vr, h){
   let r12 = rayons((r1/100), (r2/100), forme);
-  console.log(r12);
   let vr1 = 0.52 * ((1/r12[0])+(1/r12[1]));
   let vrt = vr1 + vr;
   let f = 1 / vrt;
-  console.log(-f * ((0.3 - h) / h));
+  if(forme == "biconcave" || forme == "ménisque divergeant"){
+    f = -f;
+  }
   return -f * ((0.3 - h) / h);
 }
 
