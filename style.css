@@ -35,8 +35,8 @@ h1{
 
 .btns{
   display: inline-flex;
-  width: 28vw;
-  height: 28vw;
+  width: 27vw;
+  height: 27vw;
   min-width: 150px;
   min-height: 150px;
   flex-direction: row;
@@ -67,8 +67,9 @@ h1{
 
 #header{
   background-color: #7ac2a2;
-  height: 300px;
+  min-height: 45vh;
   margin-top: 0px;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
