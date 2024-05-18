@@ -1,41 +1,19 @@
 const start = document.getElementById("btn").addEventListener("click", calculs);
 
 function calculs(){
-  const n1d1 = Number(document.getElementById("n1d1").value);
-  const n1d2 = Number(document.getElementById("n1d2").value);
-  const n1d3 = Number(document.getElementById("n1d3").value);
-  const n1d4 = Number(document.getElementById("n1d4").value);
-  const n2d1 = Number(document.getElementById("n2d1").value);
-  const n2d2 = Number(document.getElementById("n2d2").value);
-  const n2d3 = Number(document.getElementById("n2d3").value);
-  const n2d4 = Number(document.getElementById("n2d4").value);
-  const n3d1 = Number(document.getElementById("n3d1").value);
-  const n3d2 = Number(document.getElementById("n3d2").value);
-  const n3d3 = Number(document.getElementById("n3d3").value);
-  const n3d4 = Number(document.getElementById("n3d4").value);
-  const n4d1 = Number(document.getElementById("n4d1").value);
-  const n4d2 = Number(document.getElementById("n4d2").value);
-  const n4d3 = Number(document.getElementById("n4d3").value);
-  const n4d4 = Number(document.getElementById("n4d4").value);
-  const n5d1 = document.getElementById("n5d1").value;
-  const n5d2 = Number(document.getElementById("n5d2").value);
-  const n5d3 = Number(document.getElementById("n5d3").value);
-  const n5d4 = Number(document.getElementById("n5d4").value);
-  const n5d5 = Number(document.getElementById("n5d5").value);
-
-  let hC = Math.round(hChateau(n1d1, n1d2, n1d3, n1d4) * 100)/100;
-  let dC = Math.fround(dChateau(n2d1, n2d2, n2d3, n2d4, hC) * 100)/100;
-  let kR = Math.round(kRessort(n3d1, n3d2, n3d4, hC) * 100)/100;
-  let tC = tCordes(n4d1, n4d2, n4d3, n4d4, n3d3);
-  let dl = Math.round(dLentille(n5d1, n5d2, n5d3, n5d4, n5d5) * 10000)/10000;
+  let hC = Math.round(hChateau(id("n1d1"), id("n1d2"), id("n1d3"), id("n1d4")) * 100)/100;
+  let dC = Math.round(dChateau(id("n2d1"), id("n2d2"), id("n2d3"), id("n2d4"), hC) * 100)/100;
+  let kR = Math.round(kRessort(id("n3d1"), id("n3d2"), id("n3d4"), hC) * 100)/100;
+  let tC = tCordes(id("n4d1"), id("n4d2"), id("n4d3"), id("n4d4"), id("n3d3"));
+  let dl = Math.round(dLentille(id("n5d1", false), id("n5d2"), id("n5d3"), id("n5d4"), id("n5d5")) * 10000)/10000;
   document.getElementById("cdon").style.display = "none";
-  document.getElementById("h1").innerText = "Résultats";
-  document.getElementById("a").innerText = `no1: ${hC} m` ;
-  document.getElementById("b").innerText = `no2: ${dC} m`;
-  document.getElementById("c").innerText = `no3: ${kR}`;
-  document.getElementById("d").innerText = `no4: t1 = ${Math.round(tC[0] * 100)/100} N\nt2 = ${Math.round(tC[1] * 100)/100} N`;
-  document.getElementById("e").innerText = `no5: ${dl} m`;
-  document.getElementById("intror").innerText = "Et voici les résultats!";
+  element("h1") = "Résultats";
+  element("a") = `no1: ${hC} m`;
+  element("b") = `no2: ${dC} m`;
+  element("c") = `no3: ${kR}`;
+  element("d") = `no4: t1 = ${Math.round(tC[0] * 100)/100} N\nt2 = ${Math.round(tC[1] * 100)/100} N`;
+  element("e") = `no5: ${dl} m`;
+  element("intror") = "Et voici les résultats!";
   window.scrollTo(0,0);
 }
 
@@ -48,7 +26,7 @@ function hChateau(x, t1, v, t2){
 function dChateau(f2, d12, hi2, di2, hChateau){
   let do2 = doif(f2, di2, "fio");
   let di1 = do2 - d12;
-  let hi1 = grandissement(hi2, do2, -di2, "iôîo");
+  let hi1 = grandissement(hi2, do2, di2, "iôîo");
   return grandissement(di1, hi1, hChateau, "îioô");
 }
 
@@ -82,6 +60,23 @@ function dLentille(forme, r1, r2, vr, h){
   return ((0.3 / h) + 1) * f;
 }
 
+
+
+
+
+function element(id){
+  return document.getElementById(id).innerText;
+}
+
+function id(code, nb = true){
+  donnéehtml = document.getElementById(code).value;
+  if (nb){
+    return Number(donnéehtml);
+  }
+  else{
+    return donnéehtml;
+  }
+}
 
 //Fonctions pour les formules de physique...
 function kmh(x) {
