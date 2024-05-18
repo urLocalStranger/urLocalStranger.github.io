@@ -7,13 +7,13 @@ function calculs(){
   let tC = tCordes(id("n4d1"), id("n4d2"), id("n4d3"), id("n4d4"), id("n3d3"));
   let dl = Math.round(dLentille(id("n5d1", false), id("n5d2"), id("n5d3"), id("n5d4"), id("n5d5")) * 10000)/10000;
   document.getElementById("cdon").style.display = "none";
-  element("h1") = "Résultats";
-  element("a") = `no1: ${hC} m`;
-  element("b") = `no2: ${dC} m`;
-  element("c") = `no3: ${kR}`;
-  element("d") = `no4: t1 = ${Math.round(tC[0] * 100)/100} N\nt2 = ${Math.round(tC[1] * 100)/100} N`;
-  element("e") = `no5: ${dl} m`;
-  element("intror") = "Et voici les résultats!";
+  element("h1", "Résultats");
+  element("a", `no1: ${hC} m`);
+  element("b", `no2: ${dC} m`);
+  element("c", `no3: ${kR}`);
+  element("d", `no4: t1 = ${Math.round(tC[0] * 100)/100} N\nt2 = ${Math.round(tC[1] * 100)/100} N`);
+  element("e", `no5: ${dl} m`);
+  element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
 
@@ -64,8 +64,8 @@ function dLentille(forme, r1, r2, vr, h){
 
 
 
-function element(id){
-  return document.getElementById(id).innerText;
+function element(id, content){
+  document.getElementById(id).innerText = content;
 }
 
 function id(code, nb = true){
