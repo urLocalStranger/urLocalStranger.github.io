@@ -107,7 +107,7 @@ p{
 .donnees{
   height: auto;
   width: fit-content;
-  justify-content: center;
+  justify-content: top;
   align-self: center;
   margin-bottom: 1vw;
 }
