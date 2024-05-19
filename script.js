@@ -92,7 +92,7 @@ function setCookie(){
 function newCookie(name){
   console.log("entré...");
   const date = new Date();
-  date.setTime(date.getTime() + (5 * 24 * 60 * 60 * 1000));
+  date.setTime(date.getTime() + (24 * 60 * 60 * 1000));
   let expires = "expires="+date.toUTCString();
   console.log(expires);
   let value = document.getElementById(name).value
@@ -104,7 +104,7 @@ function getCookie(name){
 	let cookie = decodeURIComponent(document.cookie);
   let cs = cookie.replace(/;/g, "");
 	let c = cs.split(/=|\s/g);
-  for(let i = 0; i <= ((c.length)/2); i+=2){
+  for(let i = 0; i <= c.length - 2; i+=2){
     if (c[i] == name){
       document.getElementById(name).value = c[i+1];
     }
