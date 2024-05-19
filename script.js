@@ -4,11 +4,13 @@ let idArray1 = ["n1d1", "n1d2", "n1d3", "n1d4", "n2d1", "n2d2", "n2d3", "n2d4", 
 
 function calculs1(){
   idArray1.forEach(newCookie);
+  console.log("Stage 1 passed!");
   let hC = Math.round(hChateau(id("n1d1"), id("n1d2"), id("n1d3"), id("n1d4")) * 100)/100;
   let dC = Math.round(dChateau(id("n2d1"), id("n2d2"), id("n2d3"), id("n2d4"), hC) * 100)/100;
   let kR = Math.round(kRessort(id("n3d1"), id("n3d2"), id("n3d4"), hC) * 100)/100;
   let tC = tCordes(id("n4d1"), id("n4d2"), id("n4d3"), id("n4d4"), id("n3d3"));
   let dl = Math.round(dLentille(id("n5d1", false), id("n5d2"), id("n5d3"), id("n5d4"), id("n5d5")) * 10000)/10000;
+  console.log("Stage 2 passed!");
   document.getElementById("cdon").style.display = "none";
   element("h1", "Résultats");
   element("a", `no1: ${hC} m`);
@@ -84,14 +86,15 @@ function dLentille(forme, r1, r2, vr, h){
 
 
 function setCookie(){
-  idArray1.forEach(getCookie());
+  idArray1.forEach(getCookie);
 }
-function newCookie(name) {
+function newCookie(name){
   const date = new Date();
   date.setTime(date.getTime() + (5 * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
   let value = document.getElementById(name).value
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  console.log("New Cookie!");
 }
 
 function getCookie(name){
