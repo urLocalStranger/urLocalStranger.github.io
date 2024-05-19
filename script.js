@@ -117,7 +117,9 @@ function tSon(dMontagne, hMontagne, hChateau){
 
 
 
-
+function setCookie(){
+  idArray1.forEach(getCookie);
+}
 function newCookie(name) {
   const date = new Date();
   date.setTime(date.getTime() + (5 * 24 * 60 * 60 * 1000));
