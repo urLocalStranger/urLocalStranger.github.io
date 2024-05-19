@@ -1,5 +1,6 @@
 const start1 = document.getElementById("btn").addEventListener("click", calculs1);
 const start2 = document.getElementById("btnp2").addEventListener("click", calculs2);
+let idArray1 = ["n1d1", "n1d2", "n1d3", "n1d4", "n2d1", "n2d2", "n2d3", "n2d4", "n3d1", "n3d2", "n3d3", "n3d4", "n4d1", "n4d2", "n4d3", "n4d4", "n5d1", "n5d2", "n5d3", "n5d4", "n5d5"];
 
 function calculs1(){
   idArray1.forEach(newCookie);
@@ -116,7 +117,6 @@ function tSon(dMontagne, hMontagne, hChateau){
 
 
 
-let idArray1 = ["n1d1", "n1d2", "n1d3", "n1d4", "n2d1", "n2d2", "n2d3", "n2d4", "n3d1", "n3d2", "n3d3", "n3d4", "n4d1", "n4d2", "n4d3", "n4d4", "n5d1", "n5d2", "n5d3", "n5d4", "n5d5"];
 
 function newCookie(name) {
   const date = new Date();
