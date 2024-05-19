@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Alfa+Slab+One&display=swap" rel="stylesheet">
 </head>
 
-<body onload="setCookie()">
+<body>
   <div id="header">
     <h1 id="h1">Données</h1>
   </div>
@@ -102,23 +102,23 @@
     <p id="e"></p>
   </div>
   <script src="script.js">
-  let idArray1 = ["n1d1", "n1d2", "n1d3", "n1d4", "n2d1", "n2d2", "n2d3", "n2d4", "n3d1", "n3d2", "n3d3", "n3d4", "n4d1", "n4d2", "n4d3", "n4d4", "n5d1", "n5d2", "n5d3", "n5d4", "n5d5"];
-  function getCookie(name){
-    let cookie = decodeURIComponent(document.cookie);
-    let cs = cookie.replace(/;/g, "");
-    let c = cs.split(/=|\s/g);
-    for(let i = 0; i <= ((c.length)/2); i+=2){
-      if (c[i] == name){
-        document.getElementById(name).value = c[i+1];
-      }
-      else{
-        continue;
-      }
-    }
-  }
-  function setCookie(){
-  idArray1.forEach(getCookie);
-  }
+  //let idArray1 = ["n1d1", "n1d2", "n1d3", "n1d4", "n2d1", "n2d2", "n2d3", "n2d4", "n3d1", "n3d2", "n3d3", "n3d4", "n4d1", "n4d2", "n4d3", "n4d4", "n5d1", "n5d2", "n5d3", "n5d4", "n5d5"];
+  //function getCookie(name){
+    //let cookie = decodeURIComponent(document.cookie);
+    //let cs = cookie.replace(/;/g, "");
+    //let c = cs.split(/=|\s/g);
+    //for(let i = 0; i <= ((c.length)/2); i+=2){
+      //if (c[i] == name){
+        //document.getElementById(name).value = c[i+1];
+      //}
+      //else{
+        //continue;
+      //}
+    //}
+  //}
+  //function setCookie(){
+  //idArray1.forEach(getCookie);
+  //}
   </script>
 </body>
 
