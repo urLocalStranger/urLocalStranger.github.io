@@ -21,7 +21,6 @@ function calculs1(){
 }
 
 function calculs2(){
-  
   let hC = Math.round(hChateau(id("n1d1"), id("n1d2"), id("n1d3"), id("n1d4")) * 100)/100;
   let dC = Math.round(dChateau(id("n2d1"), id("n2d2"), id("n2d3"), id("n2d4"), hC) * 100)/100;
   let kR = Math.round(kRessort(id("n3d1"), id("n3d2"), id("n3d4"), hC) * 100)/100;
@@ -81,39 +80,6 @@ function dLentille(forme, r1, r2, vr, h){
   return ((0.3 / h) + 1) * f;
 }
 
-
-function perche(h, d, p){
-  let angleR = 90 - atan(h / d);
-  let angleO = asin(1.33 * (sin(angleR)));
-  return (d * tan(angleO)) - h;
-}
-
-function aPente(portée, lpente, kr, xressort, angleR, m){
-  let eRessort = epr(kr, xressort, "kxe");
-  let viR = portee(angleR, 9.8, "agv");
-  let ekLancement = ek(m, v, "mve");
-  let ekfPente = ekLancement - eRessort;
-  let hPente = ep(m, 9.8, ekfPente, "mgeh");
-  let angle = asin(h / lpente);
-  
-  let vf = mrua(y, 9.8, viy, "xaift");
-  let ekTour = ek(vf, m, "vme");
-
-  return [angle, viR, ekTour];
-}
-
-function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau){
-  let viy = viCatapulte * sin(aCatapulte);
-  let y = (hChateau / 2) - hMontagne;
-  let t = mrua(y, 9.8, viy, "xaitf");
-  let vix = viCatapulte * cos(aCatapulte);
-  return vix * t;
-}
-
-function tSon(dMontagne, hMontagne, hChateau){
-  dSon = Math.sqrt((dMontagne ^ 2) + ((hMontagne - (hChateau / 2)) ^ 2));
-  return dSon / 340;
-}
 
 
 
