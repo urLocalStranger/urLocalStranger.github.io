@@ -93,7 +93,7 @@ function newCookie(name){
   console.log("entré...");
   const date = new Date();
   date.setTime(date.getTime() + (5 * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
+  let expires = "expires="+date.toUTCString();
   console.log(expires);
   let value = document.getElementById(name).value
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
