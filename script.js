@@ -89,9 +89,11 @@ function setCookie(){
   idArray1.forEach(getCookie);
 }
 function newCookie(name){
+  console.log("entré...");
   const date = new Date();
   date.setTime(date.getTime() + (5 * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
+  console.log(expires);
   let value = document.getElementById(name).value
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
   console.log("New Cookie!");
