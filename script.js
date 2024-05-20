@@ -4,7 +4,9 @@ const start1 = document.getElementById("btn").addEventListener("click", calculs1
 const start2 = document.getElementById("btnp2").addEventListener("click", calculs2);
 
 function calculs1(){
+  console.log(decodeURIComponent(document.cookie));
   idArray1.forEach(newCookie);
+  console.log(decodeURIComponent(document.cookie));
   console.log("Stage 1 passed!");
   let hC = Math.round(hChateau(id("n1d1"), id("n1d2"), id("n1d3"), id("n1d4")) * 100)/100;
   let dC = Math.round(dChateau(id("n2d1"), id("n2d2"), id("n2d3"), id("n2d4"), hC) * 100)/100;
