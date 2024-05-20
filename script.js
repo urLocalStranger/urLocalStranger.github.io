@@ -32,7 +32,7 @@ function calculs2(){
   let hC = Math.round(hChateau(getCookie("n1d1", false), getCookie("n1d2", false), getCookie("n1d3", false), getCookie("n1d4", false)) * 100)/100;
   let hP = Math.round(perche(id("n6d1"), id("n6d2")) * 100)/100;
   let aP = aPente(id("n7d1"), id("n7d2"), id("n7d3"), id("n7d4"), id("n7d5"), getCookie("n3d1", false));
-  let dM = dMontagne(id("n8d1"), id("n7d5"), aP[1], hC);
+  let dM = dMontagne(id("n8d1"), id("n7d5"), aP[1], hC, getCookie("n3d1", false));
   let tS = Math.round(tSon(dM[0], id("n8d1"), hC, dM[1]) * 100)/100;
   
   document.getElementById("cdon").style.display = "none";
@@ -41,7 +41,7 @@ function calculs2(){
   element("b", `no2: ${Math.round(aP[0] * 100)/100} °`);
   element("c", `no3: ${Math.round(dM[0] * 100)/100} m`);
   element("d", `no4: ${tS} s`);
-  element("e", `no5: ${Math.round(aP[2] * 100)/100} m`);
+  element("e", `no5: ${Math.round(dM[2] * 100)/100} m`);
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
@@ -103,18 +103,19 @@ function aPente(portee, lpente, kr, xressort, angleR, m){
   let hPente = ep(m, 9.8, ekfPente, "mgeh");
   let angle =asin(hPente / lpente);
 
-  let vf = mrua(y, 9.8, viy, "xaift");
-  let ekTour = ek(vf, m, "vme");
-
-  return [angle, viR, ekTour];
+  return [angle, viR];
 }
 
-function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau){
+function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
   let viy = viCatapulte * sin(aCatapulte);
   let y = (hChateau / 2) - hMontagne;
   let t = mrua(y, 9.8, viy, "xaitf");
   let vix = viCatapulte * cos(aCatapulte);
-  return [vix * t, t];
+  
+  let vf = mrua(y, 9.8, viy, "xaift");
+  let ekTour = ek(vf, m, "vme");
+  
+  return [vix * t, t, ekTour];
 }
 
 function tSon(dMontagne, hMontagne, hChateau, temps){
