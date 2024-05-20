@@ -27,7 +27,9 @@ function calculs1(){
 }
 
 function calculs2(){
+  console.log(decodeURIComponent(document.cookie));
   idArray2.forEach(newCookie);
+  console.log(decodeURIComponent(document.cookie));
   let hC = Math.round(hChateau(getCookie("n1d1", false), getCookie("n1d2", false), getCookie("n1d3", false), getCookie("n1d4", false)) * 100)/100;
   let hP = Math.round(perche(id("n6d1"), id("n6d2")) * 100)/100;
   let aP = aPente(id("n7d1"), id("n7d2"), id("n7d3"), id("n7d4"), id("n7d5"), getCookie("n3d1", false));
@@ -142,9 +144,11 @@ function getCookie(name, html = true){
 	let cookie = decodeURIComponent(document.cookie);
   let cs = cookie.replace(/;/g, "");
 	let c = cs.split(/=|\s/g);
+  console.log(c);
   for(let i = 0; i <= c.length - 2; i+=2){
     if (c[i] == name){
       if(html){
+        console.log(name);
         document.getElementById(name).value = c[i+1];
       }
       else{
