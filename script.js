@@ -98,7 +98,7 @@ function perche(h, d){
 function aPente(portee, lpente, kr, xressort, angleR, m){
   let eRessort = epr(kr, xressort, "kxe");
   let viR = Math.sqrt((portee * 9.8) / sin(2 * angleR));
-  let ekLancement = ek(m, v, "mve");
+  let ekLancement = ek(m, viR, "mve");
   let ekfPente = ekLancement - eRessort;
   let hPente = ep(m, 9.8, ekfPente, "mgeh");
   let angle =asin(hPente / lpente);
