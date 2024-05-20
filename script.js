@@ -4,16 +4,14 @@ const start1 = document.getElementById("btn").addEventListener("click", calculs1
 const start2 = document.getElementById("btnp2").addEventListener("click", calculs2);
 
 function calculs1(){
-  console.log(decodeURIComponent(document.cookie));
   idArray1.forEach(newCookie);
   console.log(decodeURIComponent(document.cookie));
-  console.log("Stage 1 passed!");
   let hC = Math.round(hChateau(id("n1d1"), id("n1d2"), id("n1d3"), id("n1d4")) * 100)/100;
   let dC = Math.round(dChateau(id("n2d1"), id("n2d2"), id("n2d3"), id("n2d4"), hC) * 100)/100;
   let kR = Math.round(kRessort(id("n3d1"), id("n3d2"), id("n3d4"), hC) * 100)/100;
   let tC = tCordes(id("n4d1"), id("n4d2"), id("n4d3"), id("n4d4"), id("n3d3"));
   let dl = Math.round(dLentille(id("n5d1", false), id("n5d2"), id("n5d3"), id("n5d4"), id("n5d5")) * 10000)/10000;
-  console.log("Stage 2 passed!");
+  
   document.getElementById("cdon").style.display = "none";
   element("h1", "Résultats");
   element("a", `no1: ${hC} m`);
@@ -27,7 +25,6 @@ function calculs1(){
 }
 
 function calculs2(){
-  console.log(decodeURIComponent(document.cookie));
   idArray2.forEach(newCookie);
   console.log(decodeURIComponent(document.cookie));
   let hC = Math.round(hChateau(getCookie("n1d1", false), getCookie("n1d2", false), getCookie("n1d3", false), getCookie("n1d4", false)) * 100)/100;
@@ -135,27 +132,21 @@ function mehCookie(n){
 }
 
 function newCookie(name){
-  console.log("entré...");
   const date = new Date();
   date.setTime(date.getTime() + (24 * 60 * 60 * 1000));
   let expires = "expires="+date.toUTCString();
-  console.log(expires);
   let value = document.getElementById(name).value
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
   console.log("New Cookie!");
 }
 
 function getCookie(name, html = true){
-  console.log(html);
-  console.log(name);
 	let cookie = decodeURIComponent(document.cookie);
   let cs = cookie.replace(/;/g, "");
 	let c = cs.split(/=|\s/g);
-  console.log(c);
   for(let i = 0; i <= c.length - 2; i+=2){
     if (c[i] == name){
       if(html){
-        console.log(name);
         document.getElementById(name).value = c[i+1];
       }
       else{
