@@ -135,20 +135,7 @@ label{
   justify-content: space-evenly;
 }
 
-#btn{
-  background-color:#7ac2a2;
-  height: 5vw;
-  width: 18vw;
-  font-size: 2vw;
-  font-weight: bold;
-  margin: 15vw; 
-  margin-top: 10vw;
-  border-color: #143d38;
-  border-width: 3px;
-  border-radius: 5px;
-}
-
-#btnp2{
+.continue{
   background-color:#7ac2a2;
   height: 5vw;
   width: 18vw;
