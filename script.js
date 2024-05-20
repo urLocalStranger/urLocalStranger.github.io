@@ -90,12 +90,16 @@ function dLentille(forme, r1, r2, vr, h){
 }
 
 function perche(h, d){
+  let z = [h,d];
+  console.log(z);
   let angleR = 90 - atan(h / d);
   let angleO = asin(1.33 * (sin(angleR)));
   return (d * tan(90 - angleO)) - h;
 }
 
 function aPente(portee, lpente, kr, xressort, angleR, m){
+  let z = [portee, lpente, kr, xressort, angleR, m];
+  console.log(z);
   let eRessort = epr(kr, xressort, "kxe");
   let viR = Math.sqrt((portee * 9.8) / sin(2 * angleR));
   let ekLancement = ek(m, viR, "mve");
@@ -107,6 +111,8 @@ function aPente(portee, lpente, kr, xressort, angleR, m){
 }
 
 function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
+  let z = [hMontagne, aCatapulte, viCatapulte, hChateau, m];
+  console.log(z);
   let viy = viCatapulte * sin(aCatapulte);
   let y = (hChateau / 2) - hMontagne;
   let t = mrua(y, 9.8, viy, "xaitf");
@@ -119,6 +125,8 @@ function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
 }
 
 function tSon(dMontagne, hMontagne, hChateau, temps){
+  let z = [dMontagne, hMontagne, hChateau, temps];
+  console.log(z);
   dSon = Math.sqrt((dMontagne ^ 2) + ((hMontagne - (hChateau / 2)) ^ 2));
   return (dSon / 340) + temps;
 }
