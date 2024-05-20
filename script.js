@@ -141,6 +141,8 @@ function newCookie(name){
 }
 
 function getCookie(name, html = true){
+  console.log(html);
+  console.log(name);
 	let cookie = decodeURIComponent(document.cookie);
   let cs = cookie.replace(/;/g, "");
 	let c = cs.split(/=|\s/g);
