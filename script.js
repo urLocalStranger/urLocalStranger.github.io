@@ -1,8 +1,9 @@
+let idArray1 = ["n1d1", "n1d2", "n1d3", "n1d4", "n2d1", "n2d2", "n2d3", "n2d4", "n3d1", "n3d2", "n3d3", "n3d4", "n4d1", "n4d2", "n4d3", "n4d4", "n5d1", "n5d2", "n5d3", "n5d4", "n5d5"];
+let idArray2 = ["n6d1", "n6d2", "n6d3", "n7d1", "n7d2", "n7d3", "n7d4", "n7d5", "n8d1"]
 const start1 = document.getElementById("btn").addEventListener("click", calculs1);
 const start2 = document.getElementById("btnp2").addEventListener("click", calculs2);
 
 function calculs1(){
-  let idArray1 = ["n1d1", "n1d2", "n1d3", "n1d4", "n2d1", "n2d2", "n2d3", "n2d4", "n3d1", "n3d2", "n3d3", "n3d4", "n4d1", "n4d2", "n4d3", "n4d4", "n5d1", "n5d2", "n5d3", "n5d4", "n5d5"];
   idArray1.forEach(newCookie);
   console.log("Stage 1 passed!");
   let hC = Math.round(hChateau(id("n1d1"), id("n1d2"), id("n1d3"), id("n1d4")) * 100)/100;
@@ -23,18 +24,20 @@ function calculs1(){
 }
 
 function calculs2(){
-  let hC = Math.round(hChateau(id("n1d1"), id("n1d2"), id("n1d3"), id("n1d4")) * 100)/100;
-  let dC = Math.round(dChateau(id("n2d1"), id("n2d2"), id("n2d3"), id("n2d4"), hC) * 100)/100;
-  let kR = Math.round(kRessort(id("n3d1"), id("n3d2"), id("n3d4"), hC) * 100)/100;
-  let tC = tCordes(id("n4d1"), id("n4d2"), id("n4d3"), id("n4d4"), id("n3d3"));
-  let dl = Math.round(dLentille(id("n5d1", false), id("n5d2"), id("n5d3"), id("n5d4"), id("n5d5")) * 10000)/10000;
+  idArray2.forEach(newCookie);
+  let hC = Math.round(hChateau(getCookie("n1d1", false), getCookie("n1d2", false), getCookie("n1d3", false), getCookie("n1d4", false)) * 100)/100;
+  let hP = Math.round(perche(id("n6d1"), id("n6d2")) * 100)/100;
+  let aP = aPente(id("n7d1"), id("n7d2"), id("n7d3"), id("n7d4"), id("n7d5"), getCookie("n3d1", false));
+  let dM = dMontagne(id("n8d1"), id("n7d5"), aP[1], hC);
+  let tS = Math.round(tSon(dM[0], id("n8d1"), hC, dM[1]) * 100)/100;
+  
   document.getElementById("cdon").style.display = "none";
   element("h1", "Résultats");
-  element("a", `no1: ${hC} m`);
-  element("b", `no2: ${dC} m`);
-  element("c", `no3: ${kR}`);
-  element("d", `no4: t1 = ${Math.round(tC[0] * 100)/100} N\nt2 = ${Math.round(tC[1] * 100)/100} N`);
-  element("e", `no5: ${dl} m`);
+  element("a", `no1: ${hP} m`);
+  element("b", `no2: ${Math.round(aP[0] * 100)/100} °`);
+  element("c", `no3: ${Math.round(dM[0] * 100)/100} m`);
+  element("d", `no4: ${tS} s`);
+  element("e", `no5: ${Math.round(aP[2] * 100)/100} m`);
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
@@ -82,11 +85,43 @@ function dLentille(forme, r1, r2, vr, h){
   return ((0.3 / h) + 1) * f;
 }
 
+function perche(h, d){
+  let angleR = 90 - atan(h / d);
+  let angleO = asin(1.33 * (sin(angleR)));
+  return (d * tan(90 - angleO)) - h;
+}
+
+function aPente(portee, lpente, kr, xressort, angleR, m){
+  let eRessort = epr(kr, xressort, "kxe");
+  let viR = Math.sqrt((portee * 9.8) / sin(2 * angleR));
+  let ekLancement = ek(m, v, "mve");
+  let ekfPente = ekLancement - eRessort;
+  let hPente = ep(m, 9.8, ekfPente, "mgeh");
+  let angle =asin(hPente / lpente);
+
+  let vf = mrua(y, 9.8, viy, "xaift");
+  let ekTour = ek(vf, m, "vme");
+
+  return [angle, viR, ekTour];
+}
+
+function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau){
+  let viy = viCatapulte * sin(aCatapulte);
+  let y = (hChateau / 2) - hMontagne;
+  let t = mrua(y, 9.8, viy, "xaitf");
+  let vix = viCatapulte * cos(aCatapulte);
+  return [vix * t, t];
+}
+
+function tSon(dMontagne, hMontagne, hChateau, temps){
+  dSon = Math.sqrt((dMontagne ^ 2) + ((hMontagne - (hChateau / 2)) ^ 2));
+  return (dSon / 340) + temps;
+}
+
 
 
 
 function setCookie(){
-  let idArray1 = ["n1d1", "n1d2", "n1d3", "n1d4", "n2d1", "n2d2", "n2d3", "n2d4", "n3d1", "n3d2", "n3d3", "n3d4", "n4d1", "n4d2", "n4d3", "n4d4", "n5d1", "n5d2", "n5d3", "n5d4", "n5d5"];
   idArray1.forEach(getCookie);
 }
 function newCookie(name){
@@ -100,13 +135,18 @@ function newCookie(name){
   console.log("New Cookie!");
 }
 
-function getCookie(name){
+function getCookie(name, html = true){
 	let cookie = decodeURIComponent(document.cookie);
   let cs = cookie.replace(/;/g, "");
 	let c = cs.split(/=|\s/g);
   for(let i = 0; i <= c.length - 2; i+=2){
     if (c[i] == name){
-      document.getElementById(name).value = c[i+1];
+      if(html){
+        document.getElementById(name).value = c[i+1];
+      }
+      else{
+        return c[i+1];
+      }
     }
     else{
       continue;
