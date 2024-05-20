@@ -140,6 +140,7 @@ function newCookie(name){
   let expires = "expires="+date.toUTCString();
   let value = document.getElementById(name).value
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  document.cookie = name + "=" + value + ";" + expires + ";path=/tester2";
   console.log("New Cookie!");
 }
 
