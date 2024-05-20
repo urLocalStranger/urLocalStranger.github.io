@@ -116,12 +116,18 @@ function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
   let z = [hMontagne, aCatapulte, viCatapulte, hChateau, m];
   console.log(z);
   let viy = viCatapulte * sin(aCatapulte);
+  console.log("viy = " + viy);
   let y = (hChateau / 2) - hMontagne;
+  console.log("y = " + y);
   let t = mrua(y, 9.8, viy, "xaitf");
+  console.log("t = " + t);
   let vix = viCatapulte * cos(aCatapulte);
+  console.log("vix = " + vix);
   
   let vf = mrua(y, 9.8, viy, "xaift");
+  console.log("vf = " + vf);
   let ekTour = ek(vf, m, "vme");
+  console.log("ekTour = " + ekTour);
   
   return [vix * t, t, ekTour];
 }
@@ -146,7 +152,7 @@ function mehCookie(n){
 
 function newCookie(name){
   const date = new Date();
-  date.setTime(date.getTime() + (24 * 60 * 60 * 1000));
+  date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
   let expires = "expires="+date.toUTCString();
   let value = document.getElementById(name).value
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
