@@ -25,6 +25,7 @@ function calculs1(){
 }
 
 function calculs2(){
+  console.log("2");
   idArray2.forEach(newCookie);
   console.log(decodeURIComponent(document.cookie));
   let hC = Math.round(hChateau(getCookie("n1d1", false), getCookie("n1d2", false), getCookie("n1d3", false), getCookie("n1d4", false)) * 100)/100;
