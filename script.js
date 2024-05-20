@@ -119,12 +119,12 @@ function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
   console.log("viy = " + viy);
   let y = (hChateau / 2) - hMontagne;
   console.log("y = " + y);
-  let t = mrua(y, 9.8, viy, "xaitf");
+  let t = mrua(y, -9.8, viy, "xaitf");
   console.log("t = " + t);
   let vix = viCatapulte * cos(aCatapulte);
   console.log("vix = " + vix);
   
-  let vf = mrua(y, 9.8, viy, "xaift");
+  let vf = mrua(y, -9.8, viy, "xaift");
   console.log("vf = " + vf);
   let ekTour = ek(vf, m, "vme");
   console.log("ekTour = " + ekTour);
@@ -287,7 +287,7 @@ function mrua(d1, d2, d3, p) {
     case "af":
       return (x - (i * t)) / (0.5 * Math.pow(t,2));
     case "tf":
-      return (-i + Math.sqrt(Math.pow(i,2) + (2 * a * x))) / (a);
+        return Math.max(((-i + Math.sqrt(Math.pow(i,2) + (2 * a * x))) / (a)), (((-i - Math.sqrt(Math.pow(i,2) + (2 * a * x))) / (a));
     case "xi":
       return (f * t) - (0.5 * a * Math.pow(t,2));
     case "fi":
