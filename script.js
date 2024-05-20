@@ -127,8 +127,13 @@ function tSon(dMontagne, hMontagne, hChateau, temps){
 
 
 function setCookie(a){
-  a.forEach(getCookie);
+  a.forEach(mehCookie);
 }
+
+function mehCookie(n){
+  getCookie(n);
+}
+
 function newCookie(name){
   console.log("entré...");
   const date = new Date();
