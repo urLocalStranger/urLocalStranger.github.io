@@ -20,6 +20,7 @@ function calculs1(){
   element("d", `no4: t1 = ${Math.round(tC[0] * 100)/100} N\nt2 = ${Math.round(tC[1] * 100)/100} N`);
   element("e", `no5: ${dl} m`);
   element("intror", "Et voici les résultats!");
+  document.getElementById("next").style.display = "flex";
   window.scrollTo(0,0);
 }
 
