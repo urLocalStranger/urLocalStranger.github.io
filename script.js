@@ -153,7 +153,7 @@ function getCookie(name, html = true){
         document.getElementById(name).value = c[i+1];
       }
       else{
-        return c[i+1];
+        return Number(c[i+1]);
       }
     }
     else{
