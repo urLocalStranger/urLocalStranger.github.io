@@ -5,12 +5,19 @@ const start2 = document.getElementById("btnp2").addEventListener("click", calcul
 
 function calculs1(){
   idArray1.forEach(newCookie);
+  idArray2.forEach(newCookie);
   console.log(decodeURIComponent(document.cookie));
   let hC = Math.round(hChateau(id("n1d1"), id("n1d2"), id("n1d3"), id("n1d4")) * 100)/100;
   let dC = Math.round(dChateau(id("n2d1"), id("n2d2"), id("n2d3"), id("n2d4"), hC) * 100)/100;
   let kR = Math.round(kRessort(id("n3d1"), id("n3d2"), id("n3d4"), hC) * 100)/100;
   let tC = tCordes(id("n4d1"), id("n4d2"), id("n4d3"), id("n4d4"), id("n3d3"));
   let dl = Math.round(dLentille(id("n5d1", false), id("n5d2"), id("n5d3"), id("n5d4"), id("n5d5")) * 10000)/10000;
+  
+  let hC = Math.round(hChateau(getCookie("n1d1", false), getCookie("n1d2", false), getCookie("n1d3", false), getCookie("n1d4", false)) * 100)/100;
+  let hP = Math.round(perche(id("n6d1"), id("n6d2")) * 100)/100;
+  let aP = aPente(id("n7d1"), id("n7d2"), id("n7d3"), id("n7d4"), id("n7d5"), getCookie("n3d1", false));
+  let dM = dMontagne(id("n8d1"), id("n7d5"), aP[1], hC);
+  let tS = Math.round(tSon(dM[0], id("n8d1"), hC, dM[1]) * 100)/100;
   
   document.getElementById("cdon").style.display = "none";
   element("h1", "Résultats");
@@ -20,28 +27,22 @@ function calculs1(){
   element("d", `no4: t1 = ${Math.round(tC[0] * 100)/100} N\nt2 = ${Math.round(tC[1] * 100)/100} N`);
   element("e", `no5: ${dl} m`);
   element("intror", "Et voici les résultats!");
+  element("f", `no1: ${hP} m`);
+  element("g", `no2: ${Math.round(aP[0] * 100)/100} °`);
+  element("h", `no3: ${Math.round(dM[0] * 100)/100} m`);
+  element("i", `no4: ${tS} s`);
+  element("j", `no5: ${Math.round(aP[2] * 100)/100} m`);
   document.getElementById("next").style.display = "flex";
   window.scrollTo(0,0);
 }
 
 function calculs2(){
   console.log("2");
-  idArray2.forEach(newCookie);
+  
   console.log(decodeURIComponent(document.cookie));
-  let hC = Math.round(hChateau(getCookie("n1d1", false), getCookie("n1d2", false), getCookie("n1d3", false), getCookie("n1d4", false)) * 100)/100;
-  let hP = Math.round(perche(id("n6d1"), id("n6d2")) * 100)/100;
-  let aP = aPente(id("n7d1"), id("n7d2"), id("n7d3"), id("n7d4"), id("n7d5"), getCookie("n3d1", false));
-  let dM = dMontagne(id("n8d1"), id("n7d5"), aP[1], hC);
-  let tS = Math.round(tSon(dM[0], id("n8d1"), hC, dM[1]) * 100)/100;
   
   document.getElementById("cdon").style.display = "none";
-  element("h1", "Résultats");
-  element("a", `no1: ${hP} m`);
-  element("b", `no2: ${Math.round(aP[0] * 100)/100} °`);
-  element("c", `no3: ${Math.round(dM[0] * 100)/100} m`);
-  element("d", `no4: ${tS} s`);
-  element("e", `no5: ${Math.round(aP[2] * 100)/100} m`);
-  element("intror", "Et voici les résultats!");
+
   window.scrollTo(0,0);
 }
 
@@ -268,7 +269,7 @@ function mrua(d1, d2, d3, p) {
     case "af":
       return (x - (i * t)) / (0.5 * Math.pow(t,2));
     case "tf":
-      return (-i + Math.sqrt(Math.pow(i,2) + (2 * a * x))) / (a);
+      return Math.max((-i + Math.sqrt(Math.pow(i,2) + (2 * a * x))) / (a), -i - Math.sqrt(Math.pow(i,2) + (2 * a * x))) / (a));
     case "xi":
       return (f * t) - (0.5 * a * Math.pow(t,2));
     case "fi":
