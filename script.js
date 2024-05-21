@@ -95,7 +95,9 @@ function perche(h, d){
   let z = [h,d];
   console.log(z);
   let angleR = 90 - atan(h / d);
+  console.log(angleR);
   let angleO = asin(1.33 * (sin(angleR)));
+  console.log(angleO);
   return (d * tan(90 - angleO)) - h;
 }
 
