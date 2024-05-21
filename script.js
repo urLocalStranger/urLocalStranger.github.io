@@ -39,11 +39,11 @@ function calculs2(){
   
   document.getElementById("cdon").style.display = "none";
   element("h1", "Résultats");
-  element("a", `no1: ${hP} m`);
-  element("b", `no2: ${Math.round(aP[0] * 100)/100} °`);
-  element("c", `no3: ${Math.round(dM[0] * 100)/100} m`);
-  element("d", `no4: ${tS} s`);
-  element("e", `no5: ${Math.round(dM[2] * 100)/100} m`);
+  element("a", `no6: ${hP} m`);
+  element("b", `no7: ${Math.round(aP[0] * 100)/100} °`);
+  element("c", `no8: ${Math.round(dM[0] * 100)/100} m`);
+  element("d", `no9: ${tS} s`);
+  element("e", `no10: ${Math.round(dM[2] * 100)/100} m`);
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
