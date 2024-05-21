@@ -32,7 +32,7 @@ function calculs2(){
   let hP = Math.round(perche(id("n6d1"), id("n6d2")) * 100)/100;
   let aP = aPente(id("n7d1"), id("n7d2"), id("n7d3"), id("n7d4"), id("n7d5"), getCookie("n3d1", false), hC);
   console.log(aP);
-  let dM = dMontagne(id("n8d1"), id("n7d5"), aP[1], hC);
+  let dM = dMontagne(id("n8d1"), id("n7d5"), aP[1], hC, getCookie("n3d1", false));
   console.log(dM);
   let tS = Math.round(tSon(dM[0], id("n8d1"), hC, dM[1]) * 100)/100;
   
