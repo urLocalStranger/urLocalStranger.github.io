@@ -287,7 +287,7 @@ function mrua(d1, d2, d3, p) {
     case "af":
       return (x - (i * t)) / (0.5 * Math.pow(t,2));
     case "tf":
-        return Math.max(((-i + Math.sqrt(Math.pow(i,2) + (2 * a * x))) / (a)), (((-i - Math.sqrt(Math.pow(i,2) + (2 * a * x))) / (a));
+        return Math.max(((-i + Math.sqrt(Math.pow(i,2) + (2 * a * x))) / (a)), (((-i - Math.sqrt(Math.pow(i,2) + (2 * a * x))) / (a))));
     case "xi":
       return (f * t) - (0.5 * a * Math.pow(t,2));
     case "fi":
