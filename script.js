@@ -42,7 +42,7 @@ function calculs2(){
   element("b", `no7: ${Math.round(aP[0] * 100)/100} °`);
   element("c", `no8: ${Math.round(dM[0] * 100)/100} m`);
   element("d", `no9: ${tS} s`);
-  element("e", `no10: ${Math.round(aP[2] * 100)/100} J`);
+  element("e", `no10: ${Math.round(dM[2] * 100)/100} J`);
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
@@ -115,18 +115,29 @@ function aPente(portee, lpente, kr, xressort, angleR, m, hChateau){
   return [angle, viR, ekTour];
 }
 
-function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau){
+function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
+  let z = [hMontagne, aCatapulte, viCatapulte, hChateau, m];
+  console.log(z);
   let viy = viCatapulte * sin(aCatapulte);
+  console.log("viy = " + viy);
   let y = (hChateau / 2) - hMontagne;
+  console.log("y = " + y);
   let t = mrua(y, -9.8, viy, "xaitf");
+  console.log("t = " + t);
   let vix = viCatapulte * cos(aCatapulte);
+  console.log("vix = " + vix);
   
-  return [vix * t, t];
+  let vf = mrua(y, -9.8, viy, "xaift");
+  console.log("vf = " + vf);
+  let ekTour = ek(vf, m, "vme");
+  console.log("ekTour = " + ekTour);
+  
+  return [vix * t, t, ekTour];
 }
 
 function tSon(dMontagne, hMontagne, hChateau, temps){
   dSon = Math.sqrt((dMontagne ^ 2) + ((hMontagne - (hChateau / 2)) ^ 2));
-  return (dSon / 340);
+  return (dSon / 340) + temps;
 }
 
 
