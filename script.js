@@ -137,6 +137,7 @@ function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
 
 function tSon(dMontagne, hMontagne, hChateau, temps){
   let dSon = Math.sqrt((dMontagne ^ 2) + ((hMontagne - (hChateau / 2)) ^ 2));
+  console.log("dSon = " + dSon);
   return (dSon / 340) + temps;
 }
 
