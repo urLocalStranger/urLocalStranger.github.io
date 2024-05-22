@@ -42,7 +42,7 @@ function calculs2(){
   element("b", `no7: ${Math.round(aP[0] * 100)/100} °`);
   element("c", `no8: ${Math.round(dM[0] * 100)/100} m`);
   element("d", `no9: ${tS} s`);
-  element("e", `no10: ${Math.round(dM[2] * 100)/100} J`);
+  element("e", `no10: ${Math.round(aP[2] * 100)/100} J`);
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
@@ -110,7 +110,7 @@ function aPente(portee, lpente, kr, xressort, angleR, m, hChateau){
   let hPente = ep(m, 9.8, ekfPente, "mgeh");
   let angle =asin(hPente / lpente);
   
-  let ekTour = ekLancement - (ep(m, 9.8, hChateau/2, "mghe"));
+  let ekTour = ekLancement - (ep(m, 9.8, -hChateau/2, "mghe"));
 
   return [angle, viR, ekTour];
 }
