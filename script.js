@@ -127,7 +127,7 @@ function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
   let vix = viCatapulte * cos(aCatapulte);
   console.log("vix = " + vix);
   
-  let vf = mrua(y, -9.8, viy, "xaift");
+  let vf = mrua(t, -9.8, viy, "taifx");
   console.log("vf = " + vf);
   let ekTour = ek(vf, m, "vme");
   console.log("ekTour = " + ekTour);
