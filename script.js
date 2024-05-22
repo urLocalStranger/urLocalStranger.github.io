@@ -108,7 +108,7 @@ function aPente(portee, lpente, kr, xressort, angleR, m, hChateau){
   let ekLancement = ek(m, viR, "mve");
   let ekfPente = ekLancement - eRessort;
   let hPente = ep(m, 9.8, ekfPente, "mgeh");
-  let angle =asin(hPente / lpente);
+  let angle = asin(hPente / lpente);
   
   let ekTour = ekLancement - (ep(m, 9.8, hChateau/2, "mghe"));
 
