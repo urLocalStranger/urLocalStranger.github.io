@@ -110,7 +110,7 @@ function aPente(portee, lpente, kr, xressort, angleR, m, hChateau){
   let hPente = ep(m, 9.8, ekfPente, "mgeh");
   let angle =asin(hPente / lpente);
   
-  let ekTour = ekLancement - (ep(m, 9.8, -hChateau/2, "mghe"));
+  let ekTour = ekLancement - (ep(m, 9.8, hChateau/2, "mghe"));
 
   return [angle, viR, ekTour];
 }
@@ -137,9 +137,8 @@ function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
 
 function tSon(dMontagne, hMontagne, hChateau, temps){
   let z = [dMontagne, hMontagne, hChateau, temps];
-  console.log(z);
-  let dSon = Math.sqrt(Math.pow(dMontagne,2) + (Math.pow(hMontagne - (hChateau / 2)),2));
-  console.log("dSon = " + dSon);
+  h = hChateau/2;
+  let dSon = Math.sqrt(Math.pow(dMontagne, 2) + Math.pow(hMontagne - h), 2);
   return (dSon / 340) + temps;
 }
 
