@@ -172,4 +172,6 @@ label{
 #radio{
   background-color: #7ac2a2;
   border-radius: 3vw;
+  padding-left: 7vw;
+  padding-right: 7vw;
 }
