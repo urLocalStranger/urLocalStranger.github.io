@@ -174,5 +174,7 @@ label{
   border-radius: 3vw;
   padding-left: 7vw;
   padding-right: 7vw;
-  padding-top: 3vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  border: 5px solid #7ac2a2;
 }
