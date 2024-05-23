@@ -148,3 +148,20 @@ label{
   border-width: 3px;
   border-radius: 5px;
 }
+
+
+.radiobtnsR{
+  background-color:red;
+  height:3vw;
+  width:3vw;
+}
+.radiobtnsB{
+  background-color:blue;
+  height:3vw;
+  width:3vw;
+}
+.radiobtnsN{
+  background-color:black;
+  height:3vw;
+  width:3vw;
+}
