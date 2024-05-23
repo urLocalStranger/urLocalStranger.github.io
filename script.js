@@ -63,9 +63,7 @@ function dChateau(f2, d12, hi2, di2, hChateau){
 function kRessort(m, v, d, hChateau){
   let ekf = ek(m, v, "mve");
   let epf = ep(m, 9.8, hChateau/2, "mghe");
-  console.log("Ep = " + epf);
   let em = ekf + epf; //Aussi epr
-  console.log("Em = " + em);
   return epr(em, d, "exk");
 }
 
@@ -101,18 +99,14 @@ function perche(h, d){
 }
 
 function aPente(portee, lpente, kr, xressort, angleR, m, hChateau){
-  let z = [portee, lpente, kr, xressort, angleR, m];
-  console.log(z);
   let eRessort = epr(kr, xressort, "kxe");
   let viR = Math.sqrt((portee * 9.8) / sin(2 * angleR));
   let ekLancement = ek(m, viR, "mve");
   let ekfPente = ekLancement - eRessort;
   let hPente = ep(m, 9.8, ekfPente, "mgeh");
   let angle = asin(hPente / lpente);
-  
-  let ekTour = ekLancement - (ep(m, 9.8, hChateau/2, "mghe"));
 
-  return [angle, viR, ekTour];
+  return [angle, viR];
 }
 
 function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
@@ -122,20 +116,15 @@ function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
   let vix = viCatapulte * cos(aCatapulte);
   
   let vfy = mrua(t, -9.8, viy, "taifx");
-  console.log("vf = " + vfy);
   let vf = Math.sqrt(Math.pow(vfy, 2) + Math.pow(vix, 2));
   let ekTour = ek(vf, m, "vme");
-  console.log("ekTour = " + ekTour);
   
   return [vix * t, t, ekTour];
 }
 
 function tSon(dMontagne, hMontagne, hChateau, temps){
-  let z = [dMontagne, hMontagne, hChateau, temps];
-  console.log(z);
   let h = hChateau/2;
   let dSon = Math.sqrt(Math.pow(dMontagne, 2) + Math.pow((hMontagne - h), 2));
-  console.log("dSon = " + dSon);
   return (dSon / 340) + temps;
 }
 
