@@ -230,9 +230,9 @@ function rayons(r1, r2, forme){
       return [r1, r2];
     case "biconcave":
         return [-r1, -r2];
-    case "ménisque convergeant":
+    case "ménisque convergent":
       return [-(Math.max(r1, r2)),Math.min(r1, r2)];
-    case "ménisque divergeant":
+    case "ménisque divergent":
       return [Math.max(r1, r2),-(Math.min(r1, r2))];
     default:
       return [0,0];
