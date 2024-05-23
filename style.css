@@ -172,9 +172,9 @@ label{
 #radio{
   background-color: #7ac2a2;
   border-radius: 3vw;
-  padding-left: 7vw;
-  padding-right: 7vw;
+  padding-left: 6vw;
+  padding-right: 6vw;
   padding-top: 2vw;
-  padding-bottom: 2vw;
-  border: 5px solid #7ac2a2;
+  padding-bottom: 1vw;
+  border: 5px solid #143d38;
 }
