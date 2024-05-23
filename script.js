@@ -42,7 +42,7 @@ function calculs2(){
   element("b", `no7: ${Math.round(aP[0] * 100)/100} °`);
   element("c", `no8: ${Math.round(dM[0] * 100)/100} m`);
   element("d", `no9: ${tS} s`);
-  element("e", `no10: ${Math.round(aP[2] * 100)/100} J`);
+  element("e", `no10: ${Math.round(dM[2] * 100)/100} J`);
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
@@ -127,8 +127,9 @@ function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
   let vix = viCatapulte * cos(aCatapulte);
   console.log("vix = " + vix);
   
-  let vf = mrua(t, -9.8, viy, "taifx");
-  console.log("vf = " + vf);
+  let vfy = mrua(t, -9.8, viy, "taifx");
+  console.log("vf = " + vfy);
+  let vf = Math.sqrt(Math.pow(vfy, 2) + Math.pow(vix, 2));
   let ekTour = ek(vf, m, "vme");
   console.log("ekTour = " + ekTour);
   
