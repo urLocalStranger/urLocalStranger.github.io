@@ -111,9 +111,13 @@ function aPente(portee, lpente, kr, xressort, angleR, m, hChateau){
 
 function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
   let viy = viCatapulte * sin(aCatapulte);
+  console.log("viy" + viy);
   let y = (hChateau / 2) - hMontagne;
+  console.log("y" + y);
   let t = mrua(y, -9.8, viy, "xaitf");
+  console.log("t" + t);
   let vix = viCatapulte * cos(aCatapulte);
+  console.log("vix" + vix);
   
   let vfy = mrua(t, -9.8, viy, "taifx");
   let vf = Math.sqrt(Math.pow(vfy, 2) + Math.pow(vix, 2));
