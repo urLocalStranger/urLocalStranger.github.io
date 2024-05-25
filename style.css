@@ -106,7 +106,6 @@ p{
 }
 
 .donnees{
-  display: flex;
   height: auto;
   width: fit-content;
   justify-content: center;
