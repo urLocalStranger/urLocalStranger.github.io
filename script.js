@@ -1,5 +1,6 @@
 let idArray1 = ["n1d1", "n1d2", "n1d3", "n1d4", "n2d1", "n2d2", "n2d3", "n2d4", "n3d1", "n3d2", "n3d3", "n3d4", "n4d1", "n4d2", "n4d3", "n4d4", "n5d1", "n5d2", "n5d3", "n5d4", "n5d5"];
-let idArray2 = ["n6d1", "n6d2", "n6d3", "n7d1", "n7d2", "n7d3", "n7d4", "n7d5", "n8d1"]
+let idArray2 = ["n6d1", "n6d2", "n6d3", "n7d1", "n7d2", "n7d3", "n7d4", "n7d5", "n8d1"];
+let idArray3 = ["n11d1", "n13d1", "n13d2", "n13d3", "n13d4", "n14d1", "n14d2", "n14d3", "n14d4", "n14d5", "n15d1", "n15d2", "n15d3", "n15d4"];
 const start1 = document.getElementById("btn").addEventListener("click", calculs1);
 const start2 = document.getElementById("btnp2").addEventListener("click", calculs2);
 
@@ -25,15 +26,12 @@ function calculs1(){
 }
 
 function calculs2(){
-  console.log("2");
   idArray2.forEach(newCookie);
   console.log(decodeURIComponent(document.cookie));
   let hC = Math.round(hChateau(getCookie("n1d1", false), getCookie("n1d2", false), getCookie("n1d3", false), getCookie("n1d4", false)) * 100)/100;
   let hP = Math.round(perche(id("n6d1"), id("n6d2")) * 100)/100;
   let aP = aPente(id("n7d1"), id("n7d2"), id("n7d3"), id("n7d4"), id("n7d5"), getCookie("n3d1", false), hC);
-  console.log(aP);
   let dM = dMontagne(id("n8d1"), id("n7d5"), aP[1], hC, getCookie("n3d1", false));
-  console.log(dM);
   let tS = Math.round(tSon(dM[0], id("n8d1"), hC, dM[1]) * 100)/100;
   
   document.getElementById("cdon").style.display = "none";
@@ -46,6 +44,26 @@ function calculs2(){
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
+
+/*function calculs3(){
+  idArray3.forEach(newCookie);
+  console.log(decodeURIComponent(document.cookie));
+  let vS;
+  let cV = cVetement()
+  let vP = vPhysicien(id("n13d1"), id("n13d2"), id("n13d3"), id("n13d4"))
+  let dM = vLasso(id("n14d1"), id("n14d2"), id("n14d3"), id("n14d4"), id("n14d5"))
+  let tS;
+  
+  document.getElementById("cdon").style.display = "none";
+  element("h1", "Résultats");
+  element("a", `no6: ${hP} m`);
+  element("b", `no7: ${Math.round(aP[0] * 100)/100} °`);
+  element("c", `no8: ${Math.round(dM[0] * 100)/100} m`);
+  element("d", `no9: ${tS} s`);
+  element("e", `no10: ${Math.round(dM[2] * 100)/100} J`);
+  element("intror", "Et voici les résultats!");
+  window.scrollTo(0,0);
+}*/
 
 function hChateau(x, t1, v, t2){
   let ombreC = ms(v) * t1;
