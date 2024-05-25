@@ -191,17 +191,17 @@ function switchColor(id){
     "background-color");
   let newColor;
   switch(color){
-    case "#e81a13":
+    case "rgb(232, 26, 19)":
       newColor = "#3c75de";
       break;
-    case "#3c75de":
+    case "rgb(60, 117, 222)":
       newColor = "#1f2021";
       break;
-    case "#1f2021":
+    case "rgb(31, 32, 33)":
       newColor = "#e81a13";
       break;
   }
-  console.log(color);
+  console.log(newColor);
   element.style.backgroundColor = newColor;
 }
 
