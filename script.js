@@ -188,14 +188,14 @@ function  switchColor(id){
   let color = document.getElementById(id).style.backgroundColor;
 
   switch(color){
-    case “#e81a13”:
-      color = “#3c75de”;
+    case "#e81a13":
+      color = "#3c75de";
       break;
-    case “#3c75de”:
-      color = “#1f2021”;
+    case "#3c75de":
+      color = "#1f2021";
       break;
-    case “#1f2021”:
-      color = “#e81a13”;
+    case "#1f2021":
+      color = "#e81a13";
       break;
   }
 }
