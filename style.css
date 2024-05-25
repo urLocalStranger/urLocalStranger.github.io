@@ -150,21 +150,8 @@ label{
 }
 
 
-.radiobtnsR{
-  background:#e81a13;
-  accent-color:#e81a13;
-  height:3vw;
-  width:3vw;
-}
-.radiobtnsB{
-  background:#3c75de;
-  accent-color:#3c75de;
-  height:3vw;
-  width:3vw;
-}
-.radiobtnsN{
-  background:#1f2021;
-  accent-color:#1f2021;
+.couleurs{
+  background-color:#e81a13;
   height:3vw;
   width:3vw;
 }
