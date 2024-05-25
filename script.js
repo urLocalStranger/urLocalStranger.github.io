@@ -184,7 +184,8 @@ function id(code, nb = true){
   }
 }
 
-function  switchColor(id){
+function switchColor(id){
+  console.log("color");
   let color = document.getElementById(id).style.backgroundColor;
   switch(color){
     case "#e81a13":
