@@ -186,7 +186,6 @@ function id(code, nb = true){
 
 function  switchColor(id){
   let color = document.getElementById(id).style.backgroundColor;
-
   switch(color){
     case "#e81a13":
       color = "#3c75de";
