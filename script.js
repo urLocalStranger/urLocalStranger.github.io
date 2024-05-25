@@ -151,7 +151,7 @@ function tSon(dMontagne, hMontagne, hChateau, temps){
 }
 
 function cVetement(){
-  let coArray = [[scColor("n12d1"), scColor("n12d2"), scColor("n12d3")], [scColor("n12d4"), [scColor("n12d5"), scColor("n12d6")]];
+  let coArray = [[scColor("n12d1"), scColor("n12d2"), scColor("n12d3")], [scColor("n12d4"), scColor("n12d5"), scColor("n12d6")]];
   let v = [];
   for(let i = 0; i <= 2; i++){
     if(coArray[0][i] == "red" && coArray[1][i] == "blue"){
@@ -321,7 +321,7 @@ function rayons(r1, r2, forme){
     case "biconcave":
         return [-r1, -r2];
     case "ménisque convergent":
-      return [-(Math.max(r1, r2)),Math.min(r1, r2)];
+      return [-(Math.max(r1, r2)).Math.min(r1, r2)];
     case "ménisque divergent":
       return [Math.max(r1, r2),-(Math.min(r1, r2))];
     default:
@@ -430,7 +430,7 @@ function epr(d1, d2, p){
   case "k":
     return e/(Math.pow(x,2) * 0.5);
   case "x":
-    return Math.sqrt(e/(0,5 * k));
+    return Math.sqrt(e/(0.5 * k));
 
   }
 }
@@ -452,7 +452,7 @@ function ek(d1, d2, p){
    case "m":
       return e/(Math.pow(v,2) * 0.5);
     case "v":
-      return Math.sqrt(e/(0,5 * m));
+      return Math.sqrt(e/(0.5 * m));
     default:
       return "...?";
   }
