@@ -106,6 +106,7 @@ p{
 }
 
 .donnees{
+  display: flex;
   height: auto;
   width: fit-content;
   justify-content: center;
@@ -152,8 +153,9 @@ label{
 
 .couleurs{
   background-color:#e81a13;
-  height:3vw;
-  width:3vw;
+  height:4vw;
+  width:4vw;
+  margin:1vw;
 }
 
 #radio{
