@@ -132,6 +132,50 @@ function tSon(dMontagne, hMontagne, hChateau, temps){
   return (dSon / 340) + temps;
 }
 
+function cVetement(){
+  let coArray = [[scColor(“n12d1”), scColor(“n12d2”), scColor(“n12d3”)], [scColor(“n12d4”), [scColor(“n12d5”), scColor(“n12d6”)]];
+  let v = []
+  for(let i = 0, i <= 2, i++){
+    if(coArray[0][i] == “red” && coArray[1][i] == “blue”){
+      v.push("blanc");
+    }
+    else if(coArray[0][i] == “red” && coArray[1][i] == “black”){
+      v.push("rouge");
+    }
+    else if(coArray[0][i] == “black” && coArray[1][i] == “blue”){
+      v.push("bleu");
+    }
+    else if(coArray[0][i] == “red” && coArray[1][i] == “black”){
+      v.push("vert");
+    }
+  }
+  return v;
+}
+
+function vPhysicien(vi1, x1, t1, vf2){
+  let a = mrua(ms(vi1), t1 * 60, x1 *1000, “itxaf”);
+  let vf1 = mrua(ms(vi1), t1 * 60, x1 *1000, “itxfa”);
+  let x2 = mrua(vf1, a, ms(vf2), “iafxt”);
+  let t2 = mrua(vf1, a, ms(vf2), “iaftx”);
+  let xPhy = Math.sqrt(Math.pow(x1 * 1000, 2) + Math.pow(x2, 2));
+  let vPhy = kmh(xPhy / ((t1 * 60) + t2));
+  let oPhy = atan(x2 / x1 * 1000);
+  return [vPhy, oPhy];
+}
+
+function vLasso(d1, vm, vc, d2, t){
+  let vM = ms(vm);
+  let vC = ms(vc);
+  let dFin = ((-vC * t) / vM) + d1;
+  let tLancer = (-vM * (d2 - d1)) / vC;
+  let tLasso = t - tLancer;
+  let xLasso = dFin - d2;
+  return xLasso / tLasso;
+}
+
+
+
+
 
 function setCookie(a){
   a.forEach(mehCookie);
@@ -185,10 +229,8 @@ function id(code, nb = true){
 }
 
 function switchColor(id){
-  console.log(id);
   let element = document.getElementById(id);
-  let color = window.getComputedStyle(element).getPropertyValue(
-    "background-color");
+  let color = window.getComputedStyle(element).getPropertyValue("background-color");
   let newColor;
   switch(color){
     case "rgb(232, 26, 19)":
@@ -201,9 +243,23 @@ function switchColor(id){
       newColor = "#e81a13";
       break;
   }
-  console.log(newColor);
   element.style.backgroundColor = newColor;
 }
+
+function scColor(id){
+  bc = window.getComputedStyle(document.getElementById(id)).getPropertyValue("background-color");
+  switch(bc){
+    case "rgb(232, 26, 19)":
+      return "red";
+    case "rgb(60, 117, 222)":
+      return "blue";
+    case "rgb(31, 32, 33)":
+      return "black";
+    default:
+      return "?";
+  }
+}
+
 
 
 //Fonctions pour les formules de physique...
