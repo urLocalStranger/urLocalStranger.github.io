@@ -185,22 +185,23 @@ function id(code, nb = true){
 }
 
 function switchColor(id){
-  console.log("color");
+  console.log(id);
   let element = document.getElementById(id);
   let color = element.style.backgroundColor;
+  let newColor;
   switch(color){
     case "#e81a13":
-      color = "#3c75de";
+      newColor = "#3c75de";
       break;
     case "#3c75de":
-      color = "#1f2021";
+      newColor = "#1f2021";
       break;
     case "#1f2021":
-      color = "#e81a13";
+      newColor = "#e81a13";
       break;
   }
   console.log(color);
-  element.style.backgroundColor = color;
+  element.style.backgroundColor = newColor;
 }
 
 
