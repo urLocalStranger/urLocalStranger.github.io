@@ -186,7 +186,8 @@ function id(code, nb = true){
 
 function switchColor(id){
   console.log("color");
-  let color = document.getElementById(id).style.backgroundColor;
+  let element = document.getElementById(id);
+  let color = element.style.backgroundColor;
   switch(color){
     case "#e81a13":
       color = "#3c75de";
@@ -198,6 +199,7 @@ function switchColor(id){
       color = "#e81a13";
       break;
   }
+  element.style.backgroundColor = color;
 }
 
 
