@@ -151,19 +151,19 @@ function tSon(dMontagne, hMontagne, hChateau, temps){
 }
 
 function cVetement(){
-  let coArray = [[scColor(“n12d1”), scColor(“n12d2”), scColor(“n12d3”)], [scColor(“n12d4”), [scColor(“n12d5”), scColor(“n12d6”)]];
-  let v = []
-  for(let i = 0, i <= 2, i++){
-    if(coArray[0][i] == “red” && coArray[1][i] == “blue”){
+  let coArray = [[scColor("n12d1"), scColor("n12d2"), scColor("n12d3")], [scColor("n12d4"), [scColor("n12d5"), scColor("n12d6")]];
+  let v = [];
+  for(let i = 0; i <= 2; i++){
+    if(coArray[0][i] == "red" && coArray[1][i] == "blue"){
       v.push("blanc");
     }
-    else if(coArray[0][i] == “red” && coArray[1][i] == “black”){
+    else if(coArray[0][i] == "red" && coArray[1][i] == "black"){
       v.push("rouge");
     }
-    else if(coArray[0][i] == “black” && coArray[1][i] == “blue”){
+    else if(coArray[0][i] == "black" && coArray[1][i] == "blue"){
       v.push("bleu");
     }
-    else if(coArray[0][i] == “red” && coArray[1][i] == “black”){
+    else if(coArray[0][i] == "red" && coArray[1][i] == "black"){
       v.push("vert");
     }
   }
@@ -171,10 +171,10 @@ function cVetement(){
 }
 
 function vPhysicien(vi1, x1, t1, vf2){
-  let a = mrua(ms(vi1), t1 * 60, x1 *1000, “itxaf”);
-  let vf1 = mrua(ms(vi1), t1 * 60, x1 *1000, “itxfa”);
-  let x2 = mrua(vf1, a, ms(vf2), “iafxt”);
-  let t2 = mrua(vf1, a, ms(vf2), “iaftx”);
+  let a = mrua(ms(vi1), t1 * 60, x1 *1000, "itxaf");
+  let vf1 = mrua(ms(vi1), t1 * 60, x1 *1000, "itxfa");
+  let x2 = mrua(vf1, a, ms(vf2), "iafxt");
+  let t2 = mrua(vf1, a, ms(vf2), "iaftx");
   let xPhy = Math.sqrt(Math.pow(x1 * 1000, 2) + Math.pow(x2, 2));
   let vPhy = kmh(xPhy / ((t1 * 60) + t2));
   let oPhy = atan(x2 / x1 * 1000);
@@ -274,13 +274,14 @@ function scColor(id){
     case "rgb(31, 32, 33)":
       return "black";
     default:
-      return "?";
+      return "aucune possible...";
   }
 }
 
 
 
 //Fonctions pour les formules de physique...
+
 function kmh(x) {
   return x * 3.6;
 }
