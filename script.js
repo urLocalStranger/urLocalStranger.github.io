@@ -199,6 +199,7 @@ function switchColor(id){
       color = "#e81a13";
       break;
   }
+  console.log(color);
   element.style.backgroundColor = color;
 }
 
