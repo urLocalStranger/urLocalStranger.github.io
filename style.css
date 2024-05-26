@@ -32,15 +32,15 @@ h1{
 
 .btns{
   display: inline-flex;
-  width: 27vw;
-  height: 27vw;
+  width: min(27vw, 300px);
+  height: min(27vw, 300px);
   min-width: 150px;
   min-height: 150px;
   flex-direction: row;
   margin: auto;
   justify-content: center;
   align-items: center;
-  font-size: 8vw;
+  font-size: min(8vw, 100px);
   font-family: 'Carter One', Georgia, 'Times New Roman', Times, serif;
   background-color: #7ac2a2;
   border: 3px solid #143d38;
