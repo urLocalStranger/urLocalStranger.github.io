@@ -50,19 +50,19 @@ function calculs2(){
 function calculs3(){
   idArray3.forEach(newCookie);
   console.log(decodeURIComponent(document.cookie));
-  let vS;
+  let vV = Math.round(vVaisseau(id("n11d1")) * 100000)/100000;
   let cV = cVetement()
   let vP = vPhysicien(id("n13d1"), id("n13d2"), id("n13d3"), id("n13d4"));
   let vL = Math.round(vLasso(id("n14d1"), id("n14d2"), id("n14d3"), id("n14d4"), id("n14d5")) * 100)/100;
-  let tS;
+  let tL = Math.round(tLasso(id("n15d1"), id("n15d2"), id("n15d3"), id("n15d4"), id("n14d2")) * 100)/100;
   
   document.getElementById("cdon").style.display = "none";
   element("h1", "Résultats");
-  element("a", `no11:\nm/s`);
+  element("a", `no11:\n${vV} m/s`);
   element("b", `no12:\n${cV[0]}\n ${cV[1]}\n ${cV[2]}`);
   element("c", `no13:\n${Math.round(vP[0] * 100)/100} km/h\n à ${Math.round(vP[1] * 100)/100} °`);
   element("d", `no14:\n${vL} m/s`);
-  element("e", `no15:\nN`);
+  element("e", `no15:\n${tL} N`);
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
@@ -152,6 +152,11 @@ function tSon(dMontagne, hMontagne, hChateau, temps){
   return (dSon / 340) + temps;
 }
 
+function vVaisseau(h){
+  return Math.sqrt(((h * 1000) + 6380000) * (9.8/(5.9736 * Math.pow(10, 24))))
+}
+
+
 function cVetement(){
   let coArray = [[scColor("n12d1"), scColor("n12d2"), scColor("n12d3")], [scColor("n12d4"), scColor("n12d5"), scColor("n12d6")]];
   let v = [];
@@ -193,9 +198,12 @@ function vLasso(d1, vm, vc, d2, t){
   return xLasso / tLasso;
 }
 
-
-
-
+function tLasso(d, h, lLasso, m, vM){
+  let a = mrua(ms(vM), d, 0, "ixfat");
+  let fx = m * a;
+  let fg = 9.8 * m;
+  return Math.sqrt(Math.pow(fg, 2) + Math.pow(fx, 2));
+}
 
 function setCookie(a){
   a.forEach(mehCookie);
