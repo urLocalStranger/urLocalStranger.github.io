@@ -52,7 +52,7 @@ function calculs3(){
   let vS;
   let cV = cVetement()
   let vP = vPhysicien(id("n13d1"), id("n13d2"), id("n13d3"), id("n13d4"));
-  let vL = Math.roud(vLasso(id("n14d1"), id("n14d2"), id("n14d3"), id("n14d4"), id("n14d5")) * 100)/100;
+  let vL = Math.round(vLasso(id("n14d1"), id("n14d2"), id("n14d3"), id("n14d4"), id("n14d5")) * 100)/100;
   let tS;
   
   document.getElementById("cdon").style.display = "none";
