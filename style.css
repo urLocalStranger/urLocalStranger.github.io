@@ -32,15 +32,15 @@ h1{
 
 .btns{
   display: inline-flex;
-  width: min(27vw, 300px);
-  height: min(27vw, 300px);
+  width: min(27vw, 325px);
+  height: min(27vw, 325px);
   min-width: 150px;
   min-height: 150px;
   flex-direction: row;
   margin: auto;
   justify-content: center;
   align-items: center;
-  font-size: min(8vw, 100px);
+  font-size: min(8vw, 90px);
   font-family: 'Carter One', Georgia, 'Times New Roman', Times, serif;
   background-color: #7ac2a2;
   border: 3px solid #143d38;
@@ -112,15 +112,15 @@ p{
 
 input{
   background-color:#7ac2a2;
-  height: 16px;
-  width: 64px;
+  height: min(4w, 30px);
+  width: min(20vw, 120px);
   font-size: 2vw;
   font-weight: bold;
   margin-bottom: 1vw;
 }
 
 label{
-  font-size: 16px;
+  font-size: min(3vw, 30px);
   font-family: sans-serif;
   font-weight: bold;
   margin: 5px;
