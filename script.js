@@ -58,11 +58,11 @@ function calculs3(){
   
   document.getElementById("cdon").style.display = "none";
   element("h1", "Résultats");
-  element("a", `no11:\n  m`);
+  element("a", `no11:\nm/s`);
   element("b", `no12:\n${cV[0]}\n ${cV[1]}\n ${cV[2]}`);
   element("c", `no13:\n${Math.round(vP[0] * 100)/100} km/h\n à ${Math.round(vP[1] * 100)/100} °`);
-  element("d", `no9:\n${vL} m/s`);
-  element("e", `no10:\n  J`);
+  element("d", `no14:\n${vL} m/s`);
+  element("e", `no15:\nN`);
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
