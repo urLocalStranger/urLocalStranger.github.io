@@ -153,7 +153,7 @@ function tSon(dMontagne, hMontagne, hChateau, temps){
 }
 
 function vVaisseau(h){
-  return Math.sqrt(((h * 1000) + 6380000) * (9.8));
+  return Math.sqrt((Math.pow(10,13)*6.67*5.9736)/((h * 1000) + 6380000));
 }
 
 
