@@ -184,7 +184,7 @@ function vPhysicien(vi1, x1, t1, vf2){
   let t2 = mrua(vf1, a, ms(vf2), "iaftx");
   let xPhy = Math.sqrt(Math.pow(x1 * 1000, 2) + Math.pow(x2, 2));
   let vPhy = kmh(xPhy / ((t1 * 60) + t2));
-  let oPhy = atan(x2 / x1 * 1000);
+  let oPhy = atan(x2 / (x1 * 1000));
   return [vPhy, oPhy];
 }
 
