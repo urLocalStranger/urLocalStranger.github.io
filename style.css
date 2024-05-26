@@ -25,11 +25,10 @@ body{
 
 h1{
   margin: 0px;
-  font-size: 15vw;
-  height: 14vw;
+  font-size: 14vw;
   font-family: 'Carter One', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   transform: translate(0px, 40px);
-  align-self: start;
+  align-self: center;
   justify-self: center;
 }
 
