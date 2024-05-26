@@ -16,11 +16,11 @@ function calculs1(){
   
   document.getElementById("cdon").style.display = "none";
   element("h1", "Résultats");
-  element("a", `no1: ${hC} m`);
-  element("b", `no2: ${dC} m`);
-  element("c", `no3: ${kR}`);
-  element("d", `no4: t1 = ${Math.round(tC[0] * 100)/100} N\nt2 = ${Math.round(tC[1] * 100)/100} N`);
-  element("e", `no5: ${dl} m`);
+  element("a", `no1:\n${hC} m`);
+  element("b", `no2:\n${dC} m`);
+  element("c", `no3:\n${kR}`);
+  element("d", `no4:\nt1 = ${Math.round(tC[0] * 100)/100} N\nt2 = ${Math.round(tC[1] * 100)/100} N`);
+  element("e", `no5:\n${dl} m`);
   element("intror", "Et voici les résultats!");
   document.getElementById("next").style.display = "flex";
   window.scrollTo(0,0);
@@ -37,11 +37,11 @@ function calculs2(){
   
   document.getElementById("cdon").style.display = "none";
   element("h1", "Résultats");
-  element("a", `no6: ${hP} m`);
-  element("b", `no7: ${Math.round(aP[0] * 100)/100} °`);
-  element("c", `no8: ${Math.round(dM[0] * 100)/100} m`);
-  element("d", `no9: ${tS} s`);
-  element("e", `no10: ${Math.round(dM[2] * 100)/100} J`);
+  element("a", `no6:\n${hP} m`);
+  element("b", `no7:\n${Math.round(aP[0] * 100)/100} °`);
+  element("c", `no8:\n${Math.round(dM[0] * 100)/100} m`);
+  element("d", `no9:\n${tS} s`);
+  element("e", `no10:\n${Math.round(dM[2] * 100)/100} J`);
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
@@ -57,11 +57,11 @@ function calculs3(){
   
   document.getElementById("cdon").style.display = "none";
   element("h1", "Résultats");
-  element("a", `no11:  m`);
-  element("b", `no12: ${cV[0]}\n ${cV[1]}\n ${cV[2]}`);
-  element("c", `no13: ${Math.round(vP[0] * 100)/100} km/h\n à ${Math.round(vP[1] * 100)/100} °`);
-  element("d", `no9: ${vL} m/s`);
-  element("e", `no10:  J`);
+  element("a", `no11:\n  m`);
+  element("b", `no12:\n${cV[0]}\n ${cV[1]}\n ${cV[2]}`);
+  element("c", `no13:\n${Math.round(vP[0] * 100)/100} km/h\n à ${Math.round(vP[1] * 100)/100} °`);
+  element("d", `no9:\n${vL} m/s`);
+  element("e", `no10:\n  J`);
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
 }
