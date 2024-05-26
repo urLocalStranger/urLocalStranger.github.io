@@ -43,6 +43,7 @@ function calculs2(){
   element("d", `no9:\n${tS} s`);
   element("e", `no10:\n${Math.round(dM[2] * 100)/100} J`);
   element("intror", "Et voici les résultats!");
+  document.getElementById("next").style.display = "flex";
   window.scrollTo(0,0);
 }
 
