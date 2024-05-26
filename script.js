@@ -3,6 +3,7 @@ let idArray2 = ["n6d1", "n6d2", "n6d3", "n7d1", "n7d2", "n7d3", "n7d4", "n7d5", 
 let idArray3 = ["n11d1", "n13d1", "n13d2", "n13d3", "n13d4", "n14d1", "n14d2", "n14d3", "n14d4", "n14d5", "n15d1", "n15d2", "n15d3", "n15d4"];
 const start1 = document.getElementById("btn").addEventListener("click", calculs1);
 const start2 = document.getElementById("btnp2").addEventListener("click", calculs2);
+const start3 = document.getElementById("btnp3").addEventListener("click", calculs3);
 
 function calculs1(){
   idArray1.forEach(newCookie);
