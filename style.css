@@ -112,16 +112,15 @@ p{
 
 input{
   background-color:#7ac2a2;
-  height: 4vw;
-  width: 20vw;
+  height: 16px;
+  width: 64px;
   font-size: 2vw;
   font-weight: bold;
   margin-bottom: 1vw;
 }
 
 label{
-  font-size: 3vw;
-  min-height: 30px;
+  font-size: 16px;
   font-family: sans-serif;
   font-weight: bold;
   margin: 5px;
