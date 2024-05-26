@@ -219,7 +219,7 @@ function newCookie(name){
   let expires = "expires="+date.toUTCString();
   let value = document.getElementById(name).value
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
-  document.cookie = name + "=" + value + ";" + expires + ";path=/partiedeux";
+  document.cookie = name + "=" + value + ";" + expires + ";path=/partiedeux-physique";
   console.log("New Cookie!");
 }
 
