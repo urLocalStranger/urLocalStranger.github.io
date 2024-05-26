@@ -164,7 +164,7 @@ function cVetement(){
     else if(coArray[0][i] == "black" && coArray[1][i] == "blue"){
       v.push("bleu");
     }
-    else if(coArray[0][i] == "red" && coArray[1][i] == "black"){
+    else if(coArray[0][i] == "black" && coArray[1][i] == "black"){
       v.push("vert");
     }
   }
