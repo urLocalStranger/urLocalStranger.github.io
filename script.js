@@ -45,25 +45,25 @@ function calculs2(){
   window.scrollTo(0,0);
 }
 
-/*function calculs3(){
+function calculs3(){
   idArray3.forEach(newCookie);
   console.log(decodeURIComponent(document.cookie));
   let vS;
   let cV = cVetement()
-  let vP = vPhysicien(id("n13d1"), id("n13d2"), id("n13d3"), id("n13d4"))
-  let dM = vLasso(id("n14d1"), id("n14d2"), id("n14d3"), id("n14d4"), id("n14d5"))
+  let vP = vPhysicien(id("n13d1"), id("n13d2"), id("n13d3"), id("n13d4"));
+  let vL = Math.roud(vLasso(id("n14d1"), id("n14d2"), id("n14d3"), id("n14d4"), id("n14d5")) * 100)/100;
   let tS;
   
   document.getElementById("cdon").style.display = "none";
   element("h1", "Résultats");
-  element("a", `no6: ${hP} m`);
-  element("b", `no7: ${Math.round(aP[0] * 100)/100} °`);
-  element("c", `no8: ${Math.round(dM[0] * 100)/100} m`);
-  element("d", `no9: ${tS} s`);
-  element("e", `no10: ${Math.round(dM[2] * 100)/100} J`);
+  element("a", `no11:  m`);
+  element("b", `no12: ${cV[0]}\n ${cV[1]}\n ${cV[2]}`);
+  element("c", `no13: ${Math.round(vP[0] * 100)/100} km/h\n à ${Math.round(vP[1] * 100)/100} °`);
+  element("d", `no9: ${vL} m/s`);
+  element("e", `no10:  J`);
   element("intror", "Et voici les résultats!");
   window.scrollTo(0,0);
-}*/
+}
 
 function hChateau(x, t1, v, t2){
   let ombreC = ms(v) * t1;
