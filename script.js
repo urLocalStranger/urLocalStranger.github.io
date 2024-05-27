@@ -185,6 +185,8 @@ function vPhysicien(vi1, x1, t1, vf2){
   let xPhy = Math.sqrt(Math.pow(x1 * 1000, 2) + Math.pow(x2, 2));
   let vPhy = kmh(xPhy / ((t1 * 60) + t2));
   let oPhy = atan(x2 / (x1 * 1000));
+  let z = [a, vf1, x2, t2, xPhy];
+  console.log(z)
   return [vPhy, oPhy];
 }
 
@@ -195,6 +197,8 @@ function vLasso(d1, vm, vc, d2, t){
   let tLancer = (-vM * (d2 - d1)) / vC;
   let tLasso = t - tLancer;
   let xLasso = dFin - d2;
+  let z = [vM, vC, dFin, tLancer, tLasso];
+  console.log(z);
   return xLasso / tLasso;
 }
 
@@ -202,6 +206,7 @@ function tLasso(d, h, lLasso, m, vM){
   let a = mrua(ms(vM), d, 0, "ixfat");
   let fx = m * a;
   let fg = 9.8 * m;
+  console.log([a, fx, fg])
   return Math.sqrt(Math.pow(fg, 2) + Math.pow(fx, 2));
 }
 
