@@ -101,20 +101,14 @@ function tCordes(m, coeff, angle1, angle2, anglePente){
 function dLentille(forme, r1, r2, vr, h){
   let r12 = rayons((r1/100), (r2/100), forme);
   let vr1 = 0.52 * ((1/r12[0])+(1/r12[1]));
-  console.log("C1 = " + vr1);
   let vrt = vr1 + vr;
-  console.log("Ctot = " + vrt);
   let f = 1 / vrt;
   return ((0.3 / h) + 1) * f;
 }
 
 function perche(h, d){
-  let z = [h,d];
-  console.log(z);
   let angleR = 90 - atan(h / d);
-  console.log(angleR);
   let angleO = asin((sin(angleR)) / 1.33);
-  console.log(angleO);
   return (d * tan(90 - angleO)) - h;
 }
 
@@ -131,13 +125,9 @@ function aPente(portee, lpente, kr, xressort, angleR, m, hChateau){
 
 function dMontagne(hMontagne, aCatapulte, viCatapulte, hChateau, m){
   let viy = viCatapulte * sin(aCatapulte);
-  console.log("viy" + viy);
   let y = (hChateau / 2) - hMontagne;
-  console.log("y" + y);
   let t = mrua(y, -9.8, viy, "xaitf");
-  console.log("t" + t);
   let vix = viCatapulte * cos(aCatapulte);
-  console.log("vix" + vix);
   
   let vfy = mrua(t, -9.8, viy, "taifx");
   let vf = Math.sqrt(Math.pow(vfy, 2) + Math.pow(vix, 2));
@@ -185,8 +175,6 @@ function vPhysicien(vi1, x1, t1, vf2){
   let xPhy = Math.sqrt(Math.pow(x1, 2) + Math.pow(x2, 2));
   let vPhy = xPhy / (t1 + t2);
   let oPhy = atan(x2 / (x1));
-  let z = [a, vf1, x2, t2, xPhy];
-  console.log(z);
   return [vPhy, oPhy];
 }
 
@@ -197,8 +185,6 @@ function vLasso(d1, vm, vc, d2, t){
   let tLancer = -((d2-d1)/(vC-vM));
   let tLasso = t - tLancer;
   let xLasso = (tLasso * vM) + d2;
-  let z = [vM, vC, dFin, tLancer, tLasso, xLasso];
-  console.log(z);
   return (xLasso / tLasso) - vC;
 }
 
@@ -206,7 +192,6 @@ function tLasso(d, h, lLasso, m, vM){
   let a = mrua(ms(vM), d, 0, "ixfat");
   let fx = m * -a;
   let angle = asin(h/lLasso);
-  console.log([a, fx, angle]);
   return fx / cos(angle);
 }
 
