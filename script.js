@@ -181,7 +181,6 @@ function vPhysicien(vi1, x1, t1, vf2){
 function vLasso(d1, vm, vc, d2, t){
   let vM = ms(vm);
   let vC = ms(vc);
-  let dFin = -(vC-vM) * t + d1;
   let tLancer = -((d2-d1)/(vC-vM));
   let tLasso = t - tLancer;
   let xLasso = (tLasso * vM) + d2;
