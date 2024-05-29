@@ -163,6 +163,9 @@ function cVetement(){
     else if(coArray[0][i] == "black" && coArray[1][i] == "black"){
       v.push("vert");
     }
+    else{
+      v.push("...");
+    }
   }
   return v;
 }
@@ -206,7 +209,7 @@ function newCookie(name){
   const date = new Date();
   date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
   let expires = "expires="+date.toUTCString();
-  let value = document.getElementById(name).value
+  let value = document.getElementById(name).value;
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
   document.cookie = name + "=" + value + ";" + expires + ";path=/partiedeux-physique";
   console.log("New Cookie!");
