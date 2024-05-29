@@ -194,7 +194,7 @@ function vLasso(d1, vm, vc, d2, t){
   let vM = ms(vm);
   let vC = ms(vc);
   let dFin = -(vC-vM) * t + d1;
-  let tLancer = -((d2-d1)/(vC-vM));
+  let tLancer = -((d2-d1)/(vM-vC));
   let tLasso = t - tLancer;
   let xLasso = (tLasso * vM) + d2;
   let z = [vM, vC, dFin, tLancer, tLasso, xLasso];
