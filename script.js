@@ -197,7 +197,7 @@ function vLasso(d1, vm, vc, d2, t){
   let tLancer = -((d2-d1)/(vC-vM));
   let tLasso = t - tLancer;
   let xLasso = (tLasso * vM) + d2;
-  let z = [vM, vC, dFin, tLancer, tLasso];
+  let z = [vM, vC, dFin, tLancer, tLasso, xLasso];
   console.log(z);
   return xLasso / tLasso;
 }
