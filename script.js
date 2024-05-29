@@ -183,10 +183,10 @@ function vPhysicien(vi1, x1, t1, vf2){
   let x2 = mrua(vf1, a, vf2, "iafxt");
   let t2 = mrua(vf1, a, vf2, "iaftx");
   let xPhy = Math.sqrt(Math.pow(x1, 2) + Math.pow(x2, 2));
-  let vPhy = kmh(xPhy / ((t1) + t2));
+  let vPhy = xPhy / (t1 + t2);
   let oPhy = atan(x2 / (x1));
   let z = [a, vf1, x2, t2, xPhy];
-  console.log(z)
+  console.log(z);
   return [vPhy, oPhy];
 }
 
