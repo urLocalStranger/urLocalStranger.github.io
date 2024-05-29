@@ -206,6 +206,7 @@ function tLasso(d, h, lLasso, m, vM){
   let a = mrua(ms(vM), d, 0, "ixfat");
   let fx = m * a;
   let angle = asin(h/lLasso);
+  console.log([a, fx, angle]);
   return fx / cos(angle);
 }
 
