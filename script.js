@@ -60,7 +60,7 @@ function calculs3(){
   element("h1", "Résultats");
   element("a", `no11:\n${vV} m/s`);
   element("b", `no12:\n${cV[0]}\n ${cV[1]}\n ${cV[2]}`);
-  element("c", `no13:\n${Math.round(vP[0] * 100)/100} m/s\n à ${Math.round(vP[1] * 100)/100} °`);
+  element("c", `no13:\n${Math.round(vP[0] * 100)/100} m/s`);
   element("d", `no14:\n${vL} m/s`);
   element("e", `no15:\n${tL} N`);
   element("intror", "Et voici les résultats!");
