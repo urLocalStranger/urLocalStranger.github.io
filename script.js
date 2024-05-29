@@ -205,9 +205,8 @@ function vLasso(d1, vm, vc, d2, t){
 function tLasso(d, h, lLasso, m, vM){
   let a = mrua(ms(vM), d, 0, "ixfat");
   let fx = m * a;
-  let fg = 9.8 * m;
-  console.log([a, fx, fg])
-  return Math.sqrt(Math.pow(fg, 2) + Math.pow(fx, 2));
+  let angle = asin(h/lLasso);
+  return fx / cos(angle);
 }
 
 function setCookie(a){
