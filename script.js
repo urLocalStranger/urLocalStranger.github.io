@@ -375,15 +375,6 @@ function vPhysicien(vi1, x1, t1, vf2){
   return [vPhy, oPhy];
 }
 
-function vLasso(d1, vm, vc, d2, t){
-  let vM = ms(vm);
-  let vC = ms(vc);
-  let tLancer = -((d2-d1)/(vC-vM));
-  let tLasso = t - tLancer;
-  let xLasso = (tLasso * vM) + d2;
-  return (xLasso / tLasso) - vC;
-}
-
 function tLasso(d, h, lLasso, m, vM){
   let a = mrua(ms(vM), d, 0, "ixfat");
   let fx = m * -a;
@@ -483,6 +474,15 @@ function ep(d1, d2, d3, p){
     default:
       return "...?";
   }
+}
+
+function vLasso(d1, vm, vc, d2, t){
+  let vM = ms(vm);
+  let vC = ms(vc);
+  let tLancer = -((d2-d1)/(vC-vM));
+  let tLasso = t - tLancer;
+  let xLasso = (tLasso * vM) + d2;
+  return (xLasso / tLasso) - vC;
 }
 
 function doif(d1, d2, p){
