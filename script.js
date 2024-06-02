@@ -170,33 +170,6 @@ function cVetement(){
   return v;
 }
 
-function vPhysicien(vi1, x1, t1, vf2){
-  let a = mrua(vi1, t1, x1, "itxaf");
-  let vf1 = mrua(vi1, t1, x1, "itxfa");
-  let x2 = mrua(vf1, a, vf2, "iafxt");
-  let t2 = mrua(vf1, a, vf2, "iaftx");
-  let xPhy = Math.sqrt(Math.pow(x1, 2) + Math.pow(x2, 2));
-  let vPhy = xPhy / (t1 + t2);
-  let oPhy = atan(x2 / (x1));
-  return [vPhy, oPhy];
-}
-
-function vLasso(d1, vm, vc, d2, t){
-  let vM = ms(vm);
-  let vC = ms(vc);
-  let tLancer = -((d2-d1)/(vC-vM));
-  let tLasso = t - tLancer;
-  let xLasso = (tLasso * vM) + d2;
-  return (xLasso / tLasso) - vC;
-}
-
-function tLasso(d, h, lLasso, m, vM){
-  let a = mrua(ms(vM), d, 0, "ixfat");
-  let fx = m * -a;
-  let angle = asin(h/lLasso);
-  return fx / cos(angle);
-}
-
 function setCookie(a){
   a.forEach(mehCookie);
 }
@@ -389,6 +362,33 @@ function mrua(d1, d2, d3, p) {
     default:
       return "...?";
   }
+}
+
+function vPhysicien(vi1, x1, t1, vf2){
+  let a = mrua(vi1, t1, x1, "itxaf");
+  let vf1 = mrua(vi1, t1, x1, "itxfa");
+  let x2 = mrua(vf1, a, vf2, "iafxt");
+  let t2 = mrua(vf1, a, vf2, "iaftx");
+  let xPhy = Math.sqrt(Math.pow(x1, 2) + Math.pow(x2, 2));
+  let vPhy = xPhy / (t1 + t2);
+  let oPhy = atan(x2 / (x1));
+  return [vPhy, oPhy];
+}
+
+function vLasso(d1, vm, vc, d2, t){
+  let vM = ms(vm);
+  let vC = ms(vc);
+  let tLancer = -((d2-d1)/(vC-vM));
+  let tLasso = t - tLancer;
+  let xLasso = (tLasso * vM) + d2;
+  return (xLasso / tLasso) - vC;
+}
+
+function tLasso(d, h, lLasso, m, vM){
+  let a = mrua(ms(vM), d, 0, "ixfat");
+  let fx = m * -a;
+  let angle = asin(h/lLasso);
+  return fx / cos(angle);
 }
 
 function fr(d1, d2, p){
