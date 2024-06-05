@@ -166,10 +166,8 @@ label{
 
 #contco4{
   display: flex;
-  height: fit-content;
   background-color: #143d38;
   width: fit-content;
-  align-self: top;
   margin: 10px;
   padding: 10px;
 }
