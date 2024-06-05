@@ -167,12 +167,14 @@ label{
 #contco4{
   display: grid;
   gap: 10px;
+  height: 60vw;
+  width: 60vw;
   background-color: #143d38;
 }
 
 .cases{
-  height: 10px;
-  width: 10px;
+  height: 50px;
+  width: 50px;
   background-color: #7ac2a2;
   grid-column-start: 1;
   grid-column-end: 7;
