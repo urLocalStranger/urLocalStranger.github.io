@@ -167,6 +167,7 @@ label{
 #contco4{
   display: flex;
   background-color: #143d38;
+  height: auto;
   width: fit-content;
   align-self: center;
   margin: 10px;
