@@ -167,14 +167,15 @@ label{
 #contco4{
   display: flex;
   background-color: #143d38;
+  align-self: center;
   width: fit-content;
-  margin: 10px;
-  padding: 10px;
+  margin: 20px;
+  padding: 20px;
 }
 
 .cases{
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   background-color: #7ac2a2;
-  margin: 5px;
+  margin: 10px;
 }
