@@ -173,6 +173,7 @@ label{
 }
 
 .cases{
+  display: block;
   height: 60px;
   width: 60px;
   background-color: #7ac2a2;
