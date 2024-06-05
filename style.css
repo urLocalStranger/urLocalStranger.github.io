@@ -165,11 +165,13 @@ label{
 }
 
 #contco4{
-  display: inline-grid;
-  gap: 10px;
-  height: 60vw;
-  width: 60vw;
+  display: flex;
+  height: fit-content;
   background-color: #143d38;
+  width: fit-content;
+  justify-content: center;
+  align-self: top;
+  margin: 10px;
 }
 
 .cases{
