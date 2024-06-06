@@ -181,6 +181,7 @@ label{
 
 #game{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -195,14 +196,13 @@ label{
 }
 
 .rangee{
-  width: 49vw;
+  width: fit-content;
   display: flex;
   flex-direction: row;
-  justfify-content: space-evenly;
 }
 
 #btnpad{
-  width: fit-content;
+  width: 49vw;
   display: flex;
   flex-direction: row;
   justfify-content: space-evenly;
