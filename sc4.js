@@ -61,12 +61,12 @@ function memory(id, co){
   let c = colId(id);
   
   if(co == "red"){
-    hori[r][c] = "R";
-    verti[c][r] = "R";
+    hori[r][c] = 'R';
+    verti[c][r] = 'R';
   }
-  else if(co == "yellow"){
-    hori[r][c] = "Y";
-    verti[c][r] = "Y";
+  else if(co == 'yellow'){
+    hori[r][c] = 'Y';
+    verti[c][r] = 'Y';
   }
   console.log(hori);
 }
