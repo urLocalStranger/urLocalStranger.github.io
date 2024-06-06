@@ -83,8 +83,8 @@ function colId(id){
 }
 
 function verification(v){
-  let verifR = v.replaceAll("R", "");
-  let verifY = v.replaceAll("Y", "");
+  let verifR = v.replaceAll("RRRR", "");
+  let verifY = v.replaceAll("YYYY", "");
   console.log(verifR);
   console.log(verifY);
   
@@ -111,4 +111,7 @@ function restart(){
   diag1 = ["____", "_____","______", "______", "_____", "____"];
   diag2 = ["____", "_____","______", "______", "_____", "____"];
   jouer = true;
+  document.getElementsByClassName("cases").forEach(function(){
+    document.getElementById(placementId).style.backgroundColor = "#7ac2a2";
+  })
 }
