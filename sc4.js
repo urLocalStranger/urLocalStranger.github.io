@@ -15,27 +15,27 @@ function listener(id){
 }
 
 function start(cn){
-    let id;
-    let color;
-    let placementId;
+  let id;
+  let color;
+  let placementId;
 
-    for(let i = 41 - (6 - (cn - 1)); i > cn - 1; i -= 7){
-        id = document.getElementsByClassName("cases")[i].id;
-        color = window.getComputedStyle(document.getElementById(id)).getPropertyValue("background-color");
-        if(color == "rgb(122, 194, 162)"){
-            placementId = id;
-            break;
-        }
-        else{
-            continue;
-        }
-    }
-    if(placementId != null){
-        document.getElementById(placementId).style.backgroundColor = "#df527e";
+  for(let i = 41 - (6 - (cn - 1)); i >= cn - 1; i -= 7){
+    id = document.getElementsByClassName("cases")[i].id;
+    color = window.getComputedStyle(document.getElementById(id)).getPropertyValue("background-color");
+    if(color == "rgb(122, 194, 162)"){
+      placementId = id;
+      break;
     }
     else{
-      console.log("Remplie!");
+      continue;
     }
+  }
+  if(placementId != null){
+    document.getElementById(placementId).style.backgroundColor = "#df527e";
+  }
+  else{
+    console.log("Remplie!");
+  }
 }
 
 
