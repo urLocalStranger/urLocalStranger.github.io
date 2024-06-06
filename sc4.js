@@ -61,12 +61,12 @@ function memory(id, co){
   let c = colId(id);
   
   if(co == "red"){
-    hori[r].charAt(c) = 'R';
-    verti[c].charAt(r) = 'R';
+    scI(hori[r], c, 'R');
+    scI(verti[c], r, 'Y');
   }
   else if(co == "yellow"){
-    hori[r].charAt(c) = 'Y';
-    verti[c].charAt(r) = 'Y';
+    scI(hori[r], c, 'Y');
+    scI(verti[c], r, 'Y');
   }
   console.log(hori);
 }
@@ -96,4 +96,10 @@ function verification(v){
     console.log("Jaune gagne!!!");
     jouer = false;
   }
+}
+
+function scI(str, index, char){
+  str = str.split(''); 
+  str.splice(index, 1, char);
+  str = str.join(''); 
 }
