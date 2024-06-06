@@ -6,7 +6,8 @@ const col4L = listener(btnarr[3]);
 const col5L = listener(btnarr[4]);
 const col6L = listener(btnarr[5]);
 const col7L = listener(btnarr[6]);
-let colnum;
+
+let playernum = 0;
 
 function listener(id){
   document.getElementById(id).addEventListener("click", function(){
@@ -31,7 +32,13 @@ function start(cn){
     }
   }
   if(placementId != null){
-    document.getElementById(placementId).style.backgroundColor = "#df527e";
+    if(playernum % 2 == 0){
+      document.getElementById(placementId).style.backgroundColor = "#df527e";
+    }
+    else{
+      document.getElementById(placementId).style.backgroundColor = "#f1c746";
+    }
+    playernum += 1;
   }
   else{
     console.log("Remplie!");
