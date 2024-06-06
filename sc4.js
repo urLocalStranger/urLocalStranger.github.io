@@ -61,12 +61,12 @@ function memory(id, co){
   let c = colId(id);
   
   if(co == "red"){
-    hori[r][c] = 'R';
-    verti[c][r] = 'R';
+    hori[r].charAt(c) = 'R';
+    verti[c].charAt(r) = 'R';
   }
-  else if(co == 'yellow'){
-    hori[r][c] = 'Y';
-    verti[c][r] = 'Y';
+  else if(co == "yellow"){
+    hori[r].charAt(c) = 'Y';
+    verti[c].charAt(r) = 'Y';
   }
   console.log(hori);
 }
@@ -74,12 +74,12 @@ function memory(id, co){
 
 function ranId(id){
   let rarr = ["a", "b", "c", "d", "e", "f"];
-  return rarr.indexOf(id[0])
+  return rarr.indexOf(id.charAt(0))
 }
 
 function colId(id){
   let carr = ["1", "2", "3", "4", "5", "6", "7"];
-  return carr.indexOf(id[1]);
+  return carr.indexOf(id.charAt(1));
 }
 
 function verification(v){
