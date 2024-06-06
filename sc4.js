@@ -13,22 +13,7 @@ function listener(id){
   start(Number(id.replaceAll("col","")));
   });
 }
-/*
-const col1L = document.getElementById(btnarr[0]).addEventListener("click", function(){
-  start(Number(btnarr[0].replaceAll("col","")));});
-const col2L = document.getElementById(btnarr[1]).addEventListener("click", function(){
-  start(Number(btnarr[1].replaceAll("col","")));});
-const col3L = document.getElementById(btnarr[2]).addEventListener("click", function(){
-  start(Number(btnarr[2].replaceAll("col","")));});
-const col4L = document.getElementById(btnarr[3]).addEventListener("click", function(){
-  start(Number(btnarr[3].replaceAll("col","")));});
-const col5L = document.getElementById(btnarr[4]).addEventListener("click", function(){
-  start(Number(btnarr[4].replaceAll("col","")));});
-const col6L = document.getElementById(btnarr[5]).addEventListener("click", function(){
-  start(Number(btnarr[5].replaceAll("col","")));});
-const col7L = document.getElementById(btnarr[6]).addEventListener("click", function(){
-  start(Number(btnarr[6].replaceAll("col","")));});
-*/
+
 function start(cn){
     let id;
     let color;
@@ -36,7 +21,7 @@ function start(cn){
 
     for(let i = 41 - (6 - (cn - 1)); i > cn - 1; i -= 7){
         id = document.getElementsByClassName("cases")[i].id;
-        color = window.getComputedStyle(getElementById(id)).getPropertyValue("background-color");
+        color = window.getComputedStyle(document.getElementById(id)).getPropertyValue("background-color");
         if(color == "rgb(122, 194, 162)"){
             placementId = id;
             break;
