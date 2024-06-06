@@ -1,4 +1,4 @@
-let btnarr = [col1, col2, col3, col4, col5, col6, col7];
+let btnarr = ["col1", "col2", "col3", "col4", "col5", "col6", "col7"];
 /*const col1L = listener(btnarr[0]);
 const col2L = listener(btnarr[1]);
 const col3L = listener(btnarr[2]);
