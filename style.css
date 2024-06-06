@@ -194,6 +194,13 @@ label{
   border: 5px solid #143d38;
 }
 
+.rangee{
+  width: 49vw;
+  display: flex;
+  flex-direction: row;
+  justfify-content: space-evenly;
+}
+
 #btnpad{
   width: 49vw;
   display: flex;
