@@ -49,6 +49,9 @@ function start(cn){
     if(placementId != null){
         document.getElementById(placementId).style.backgroundColor = "#df527e";
     }
+    else{
+      console.log("Remplie!");
+    }
 }
 
 
