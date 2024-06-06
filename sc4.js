@@ -68,6 +68,7 @@ function memory(id, co){
     hori[r][c] = "Y";
     verti[c][r] = "Y";
   }
+  console.log(hori);
 }
 
 
@@ -84,6 +85,8 @@ function colId(id){
 function verification(v){
   let verifR = v.replaceAll("R", "");
   let verifY = v.replaceAll("Y", "");
+  console.log(verifR);
+  console.log(verifY);
   
   if(verifR.length <= v.length - 4){
     console.log("Rouge gagne!!!");
