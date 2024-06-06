@@ -31,7 +31,6 @@ function start(cn){
             continue;
         }
     }
-
     if(placementId != null){
         document.getElementById(placementId).style.backgroundColor = "#df527e";
     }
