@@ -1,4 +1,10 @@
+let jouer = true;
 let btnarr = ["col1", "col2", "col3", "col4", "col5", "col6", "col7"];
+let hori = ["_______","_______","_______","_______","_______","_______"];
+let verti = ["______","______","______","______","______","______", "______"];
+let diag1 = ["____", "_____","______", "______", "_____", "____"];
+let diag2 = ["____", "_____","______", "______", "_____", "____"];
+
 const col1L = listener(btnarr[0]);
 const col2L = listener(btnarr[1]);
 const col3L = listener(btnarr[2]);
@@ -16,35 +22,78 @@ function listener(id){
 }
 
 function start(cn){
-  let id;
-  let color;
-  let placementId;
+  if(jouer){
+    let id;
+    let color;
+    let placementId;
+  
+    for(let i = 41 - (6 - (cn - 1)); i >= cn - 1; i -= 7){
+      id = document.getElementsByClassName("cases")[i].id;
+      color = window.getComputedStyle(document.getElementById(id)).getPropertyValue("background-color");
+      if(color == "rgb(122, 194, 162)"){
+        placementId = id;
+        break;
+      }
+      else{
+        continue;
+      }
+    }
+    if(placementId != null){
+      if(playernum % 2 == 0){
+        document.getElementById(placementId).style.backgroundColor = "#df527e";
+        memory(placementId, "red");
+      }
+      else{
+        document.getElementById(placementId).style.backgroundColor = "#f1c746";
+        memory(placementId, "yellow");
+      }
+      playernum += 1;
+    }
+    else{
+      console.log("Remplie!");
+    }
+    hori.forEach(verification);
+  }
+}
 
-  for(let i = 41 - (6 - (cn - 1)); i >= cn - 1; i -= 7){
-    id = document.getElementsByClassName("cases")[i].id;
-    color = window.getComputedStyle(document.getElementById(id)).getPropertyValue("background-color");
-    if(color == "rgb(122, 194, 162)"){
-      placementId = id;
-      break;
-    }
-    else{
-      continue;
-    }
+function memory(id, co){
+  let r = ranId(id);
+  let c = colId(id);
+  
+  if(co == "red"){
+    hori[r][c] = "R";
+    verti[c][r] = "R";
   }
-  if(placementId != null){
-    if(playernum % 2 == 0){
-      document.getElementById(placementId).style.backgroundColor = "#df527e";
-    }
-    else{
-      document.getElementById(placementId).style.backgroundColor = "#f1c746";
-    }
-    playernum += 1;
-  }
-  else{
-    console.log("Remplie!");
+  else if(co == "yellow"){
+    hori[r][c] = "Y";
+    verti[c][r] = "Y";
   }
 }
 
 
+function ranId(id){
+  let rarr = ["a", "b", "c", "d", "e", "f"];
+  return rarr.indexOf(id[0])
+}
 
+function colId(id){
+  let carr = ["1", "2", "3", "4", "5", "6", "7"];
+  return carr.indexOf(id[1]);
+}
 
+function verification(v){
+  let verifR = v.replaceAll("R", "");
+  let verifY = v.replaceAll("Y", "");
+  
+  if(verifR.length <= v.length - 4){
+    console.log("Rouge gagne!!!");
+    jouer = false;
+  }
+  else if(verifY.length <= v.length - 4){
+    console.log("Jaune gagne!!!");
+    jouer = false;
+  }
+  else{
+  continue;
+  }
+}
