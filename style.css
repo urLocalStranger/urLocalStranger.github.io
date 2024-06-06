@@ -175,7 +175,8 @@ label{
   height: 6vw;
   width: 6vw;
   background-color: #7ac2a2;
-  margin: 0.5vw;
+  margin-right: 0.5vw;
+  margin-left: 0.5vw;
   border-radius: 30vw;
 }
 
