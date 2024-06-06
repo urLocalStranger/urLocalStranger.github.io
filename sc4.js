@@ -34,7 +34,7 @@ function start(cn){
     let color;
     let placementId;
 
-    for(let i = cn + 41; i > cn - 1; i -= 7){
+    for(let i = 41 - (6 - (cn - 1)); i > cn - 1; i -= 7){
         id = document.getElementsByClassName("cases")[i].id;
         color = window.getComputedStyle(getElementById(id)).getPropertyValue("background-color");
         if(color == "rgb(122, 194, 162)"){
