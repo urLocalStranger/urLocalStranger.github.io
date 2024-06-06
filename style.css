@@ -169,6 +169,7 @@ label{
   background-color: #143d38;
   margin: 10px;
   padding: 10px;
+  border-radius: 7px;
 }
 
 .cases{
@@ -192,7 +193,7 @@ label{
   width: 5vw;
   background-color: #7ac2a2;
   margin: 1vw;
-  border-radius: 100vw;
+  border-radius: 30vw;
   border: 5px solid #143d38;
 }
 
