@@ -175,8 +175,8 @@ label{
   height: 6vw;
   width: 6vw;
   background-color: #7ac2a2;
-  margin-right: 0.5vw;
-  margin-left: 0.5vw;
+  margin-right: 1vw;
+  margin-left: 1vw;
   border-radius: 30vw;
 }
 
@@ -191,7 +191,7 @@ label{
   height: 5vw;
   width: 5vw;
   background-color: #7ac2a2;
-  margin: 0.5vw;
+  margin: 1vw;
   border-radius: 30vw;
   border: 5px solid #143d38;
 }
