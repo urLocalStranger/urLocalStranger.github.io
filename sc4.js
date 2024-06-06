@@ -53,6 +53,7 @@ function start(cn){
       console.log("Remplie!");
     }
     hori.forEach(verification);
+    verti.forEach(verification);
   }
 }
 
@@ -68,7 +69,6 @@ function memory(id, co){
     hori[r] = scI(hori[r], c, 'Y');
     verti[c] = scI(verti[c], r, 'Y');
   }
-  console.log(hori);
 }
 
 
@@ -103,4 +103,12 @@ function scI(str, index, char){
   str.splice(index, 1, char);
   str = str.join('');
   return str;
+}
+
+function restart(){
+  hori = ["_______","_______","_______","_______","_______","_______"];
+  verti = ["______","______","______","______","______","______", "______"];
+  diag1 = ["____", "_____","______", "______", "_____", "____"];
+  diag2 = ["____", "_____","______", "______", "_____", "____"];
+  jouer = true;
 }
