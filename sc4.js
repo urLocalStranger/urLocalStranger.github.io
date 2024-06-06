@@ -61,12 +61,12 @@ function memory(id, co){
   let c = colId(id);
   
   if(co == "red"){
-    scI(hori[r], c, 'R');
-    scI(verti[c], r, 'Y');
+    hori[r] = scI(hori[r], c, 'R');
+    verti[c] = scI(verti[c], r, 'Y');
   }
   else if(co == "yellow"){
-    scI(hori[r], c, 'Y');
-    scI(verti[c], r, 'Y');
+    hori[r] = scI(hori[r], c, 'Y');
+    verti[c] = scI(verti[c], r, 'Y');
   }
   console.log(hori);
 }
@@ -101,5 +101,6 @@ function verification(v){
 function scI(str, index, char){
   str = str.split(''); 
   str.splice(index, 1, char);
-  str = str.join(''); 
+  str = str.join('');
+  return str;
 }
