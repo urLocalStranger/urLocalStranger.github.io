@@ -172,8 +172,8 @@ label{
 }
 
 .cases{
-  height: 5vw;
-  width: 5vw;
+  height: 6vw;
+  width: 6vw;
   background-color: #7ac2a2;
   margin-right: 1vw;
   margin-left: 1vw;
@@ -192,7 +192,7 @@ label{
   width: 5vw;
   background-color: #7ac2a2;
   margin: 1vw;
-  border-radius: 30vw;
+  border-radius: 100vw;
   border: 5px solid #143d38;
 }
 
@@ -203,7 +203,7 @@ label{
 }
 
 #btnpad{
-  width: 49vw;
+  width: 56vw;
   display: flex;
   flex-direction: row;
   justfify-content: space-evenly;
