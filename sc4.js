@@ -93,7 +93,4 @@ function verification(v){
     console.log("Jaune gagne!!!");
     jouer = false;
   }
-  else{
-  continue;
-  }
 }
