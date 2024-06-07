@@ -54,7 +54,10 @@ function start(cn){
     }
     hori.forEach(verification);
     verti.forEach(verification);
-    diag1.
+    for(let i = 3; i < 8; i++){
+      verification(diag1[i]);
+      verification(diag2[i]);
+    }
   }
 }
 
