@@ -68,14 +68,14 @@ function memory(id, co){
   if(co == "red"){
     hori[r] = scI(hori[r], c, 'R');
     verti[c] = scI(verti[c], r, 'R');
-    diag1[r+c] = scI(diag[r+c], r, 'R');
-    diag2[r+c] = scI(diag[r+c], c, 'R');
+    diag1[r+c] = scI(diag1[r+c], r, 'R');
+    diag2[r+c] = scI(diag2[r+c], c, 'R');
   }
   else if(co == "yellow"){
     hori[r] = scI(hori[r], c, 'Y');
     verti[c] = scI(verti[c], r, 'Y');
-    diag1[r+c] = scI(diag[r+c], r, 'Y');
-    diag2[r+c] = scI(diag[r+c], c, 'Y');
+    diag1[r+c] = scI(diag1[r+c], r, 'Y');
+    diag2[r+c] = scI(diag2[r+c], c, 'Y');
   }
 }
 
