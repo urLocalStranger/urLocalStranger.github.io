@@ -2,8 +2,8 @@ let jouer = true;
 let btnarr = ["col1", "col2", "col3", "col4", "col5", "col6", "col7"];
 let hori = ["_______","_______","_______","_______","_______","_______"];
 let verti = ["______","______","______","______","______","______", "______"];
-let diag1 = ["____", "_____","______", "______", "_____", "____"];
-let diag2 = ["____", "_____","______", "______", "_____", "____"];
+let diag1 = ["_", "__", "___", "____", "_____","______", "______", "_____", "____", "___", "__", "_"];
+let diag2 = ["_", "__", "___", "____", "_____","______", "______", "_____", "____", "___", "__", "_"];
 
 const col1L = listener(btnarr[0]);
 const col2L = listener(btnarr[1]);
@@ -54,6 +54,7 @@ function start(cn){
     }
     hori.forEach(verification);
     verti.forEach(verification);
+    diag1.
   }
 }
 
@@ -63,11 +64,15 @@ function memory(id, co){
   
   if(co == "red"){
     hori[r] = scI(hori[r], c, 'R');
-    verti[c] = scI(verti[c], r, 'Y');
+    verti[c] = scI(verti[c], r, 'R');
+    diag1[r+c] = scI(diag[r+c], r, 'R');
+    diag2[r+c] = scI(diag[r+c], c, 'R');
   }
   else if(co == "yellow"){
     hori[r] = scI(hori[r], c, 'Y');
     verti[c] = scI(verti[c], r, 'Y');
+    diag1[r+c] = scI(diag[r+c], r, 'Y');
+    diag2[r+c] = scI(diag[r+c], c, 'Y');
   }
 }
 
