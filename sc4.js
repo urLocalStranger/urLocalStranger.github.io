@@ -122,4 +122,5 @@ function restart(){
   for(let i = 0; i < 42; i++){
     document.getElementsByClassName("cases")[i].style.backgroundColor = "#7ac2a2";
   }
+  playernum = 0;
 }
