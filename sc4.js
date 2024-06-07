@@ -69,8 +69,11 @@ function memory(id, co){
   if(co == "red"){
     hori[r] = scI(hori[r], c, 'R');
     verti[c] = scI(verti[c], r, 'R');
+    console.log("hv");
     diag1[r+c] = scI(diag1[r+c], r, 'R');
+    console.log("d1");
     diag2[r+c] = scI(diag2[r+c], c, 'R');
+    console.log("d2");
   }
   else if(co == "yellow"){
     hori[r] = scI(hori[r], c, 'Y');
