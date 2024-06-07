@@ -48,6 +48,7 @@ function start(cn){
         memory(placementId, "yellow");
       }
       playernum += 1;
+      console.log(playernum);
     }
     else{
       console.log("Remplie!");
