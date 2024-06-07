@@ -111,7 +111,7 @@ function restart(){
   diag1 = ["____", "_____","______", "______", "_____", "____"];
   diag2 = ["____", "_____","______", "______", "_____", "____"];
   jouer = true;
-  for(let i = 0; i < 41; i++){
+  for(let i = 0; i < 42; i++){
     document.getElementsByClassName("cases")[i].style.backgroundColor = "#7ac2a2";
   }
 }
