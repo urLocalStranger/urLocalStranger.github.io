@@ -56,9 +56,7 @@ function start(cn){
     hori.forEach(verification);
     verti.forEach(verification);
     for(let i = 3; i < 8; i++){
-      console.log(i);
       verification(diag1[i]);
-      console.log(i);
       verification(diag2[i]);
     }
   }
@@ -71,11 +69,8 @@ function memory(id, co){
   if(co == "red"){
     hori[r] = scI(hori[r], c, 'R');
     verti[c] = scI(verti[c], r, 'R');
-    console.log("hv");
     diag1[r+c] = scI(diag1[r+c], r, 'R');
-    console.log("d1");
     diag2[r+c] = scI(diag2[r+c], c, 'R');
-    console.log("d2");
   }
   else if(co == "yellow"){
     hori[r] = scI(hori[r], c, 'Y');
@@ -122,8 +117,8 @@ function scI(str, index, char){
 function restart(){
   hori = ["_______","_______","_______","_______","_______","_______"];
   verti = ["______","______","______","______","______","______", "______"];
-  diag1 = ["____", "_____","______", "______", "_____", "____"];
-  diag2 = ["____", "_____","______", "______", "_____", "____"];
+  diag1 = ["_", "__", "___", "____", "_____","______", "______", "_____", "____", "___", "__", "_"];
+  diag2 = ["_", "__", "___", "____", "_____","______", "______", "_____", "____", "___", "__", "_"];
   jouer = true;
   for(let i = 0; i < 42; i++){
     document.getElementsByClassName("cases")[i].style.backgroundColor = "#7ac2a2";
