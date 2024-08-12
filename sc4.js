@@ -89,9 +89,6 @@ function verification(v){
   let verifR = v.replaceAll("RRRR", "");
   let verifY = v.replaceAll("YYYY", "");
 
-  let verifR = v.replaceAll("RRR_", "");
-  let verifY = v.replaceAll("YYY_", "");
-
   if(verifR.length <= v.length - 4){
     console.log("Rouge gagne!!!");
     jouer = false; 
@@ -122,12 +119,17 @@ function restart(){
 }
 
 
-function uValue(){
+/*function uValue(){
   let arrarr = [hori, verti];
   let idArrarr = 0;
+  let verifR = v.replaceAll("RRR_", "");
+  let verifY = v.replaceAll("YYY_", "");
   for(let i = 0; i < arrarr[idArrarr].length; i++){
     let utilityHR = arrarr[idArrarr];
     v.replaceAll("RRR", "");
   }
-}
+}*/
 
+function intervention(){
+  
+}
