@@ -17,16 +17,18 @@ let playernum = 0;
 
 function listener(id){
   document.getElementById(id).addEventListener("click", function(){
-  start(Number(id.replaceAll("col","")));
+  if(jouer){
+    start(Number(id.replaceAll("col","")));
+  }
   });
 }
 
 function start(cn){
-  if(jouer){
     let id;
     let color;
     let placementId;
   
+// Où placer
     for(let i = 41 - (6 - (cn - 1)); i >= cn - 1; i -= 7){
       id = document.getElementsByClassName("cases")[i].id;
       color = window.getComputedStyle(document.getElementById(id)).getPropertyValue("background-color");
@@ -38,6 +40,7 @@ function start(cn){
         continue;
       }
     }
+
     if(placementId != null){
       if(playernum % 2 == 0){
         document.getElementById(placementId).style.backgroundColor = "#df527e";
@@ -48,7 +51,6 @@ function start(cn){
         memory(placementId, "yellow");
       }
       playernum += 1;
-      console.log(playernum);
     }
     else{
       console.log("Remplie!");
@@ -59,25 +61,17 @@ function start(cn){
       verification(diag1[i]);
       verification(diag2[i]);
     }
-  }
 }
 
 function memory(id, co){
   let r = ranId(id);
   let c = colId(id);
+  let ci = co.charAt(0).toUpperCase()
   
-  if(co == "red"){
-    hori[r] = scI(hori[r], c, 'R');
-    verti[c] = scI(verti[c], r, 'R');
-    diag1[r+c] = scI(diag1[r+c], r, 'R');
-    diag2[r+c] = scI(diag2[r+c], c, 'R');
-  }
-  else if(co == "yellow"){
-    hori[r] = scI(hori[r], c, 'Y');
-    verti[c] = scI(verti[c], r, 'Y');
-    diag1[r+c] = scI(diag1[r+c], r, 'Y');
-    diag2[r+c] = scI(diag2[r+c], c, 'Y');
-  }
+  hori[r] = scI(hori[r], c, ci);
+  verti[c] = scI(verti[c], r, ci);
+  diag1[r+c] = scI(diag1[r+c], r, ci);
+  diag2[r+c] = scI(diag2[r+c], c, ci);
 }
 
 
@@ -94,12 +88,13 @@ function colId(id){
 function verification(v){
   let verifR = v.replaceAll("RRRR", "");
   let verifY = v.replaceAll("YYYY", "");
-  console.log(verifR);
-  console.log(verifY);
-  
+
+  let verifR = v.replaceAll("RRR_", "");
+  let verifY = v.replaceAll("YYY_", "");
+
   if(verifR.length <= v.length - 4){
     console.log("Rouge gagne!!!");
-    jouer = false;
+    jouer = false; 
   }
   else if(verifY.length <= v.length - 4){
     console.log("Jaune gagne!!!");
@@ -125,3 +120,14 @@ function restart(){
   }
   playernum = 0;
 }
+
+
+function uValue(){
+  let arrarr = [hori, verti];
+  let idArrarr = 0;
+  for(let i = 0; i < arrarr[idArrarr].length; i++){
+    let utilityHR = arrarr[idArrarr];
+    v.replaceAll("RRR", "");
+  }
+}
+
