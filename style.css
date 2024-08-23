@@ -210,3 +210,8 @@ label{
   justfify-content: space-evenly;
 }
 
+table{
+  border: 5px solid #143d38;
+  background-color: aliceblue;
+}
+
