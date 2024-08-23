@@ -213,6 +213,8 @@ label{
 table{
   border: 5px solid #143d38;
   background-color: aliceblue;
+  width: 180px;
+  height: 120px;
 }
 
 .impair, .pair, .tableheader, .thn{
