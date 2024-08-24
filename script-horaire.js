@@ -26,14 +26,20 @@ const hfin = ["08:50", "09:45", "10:40", "11:35", "12:30", "13:25", "14:20", "15
 const weekday = 1;//new Date().getDay();
 const hours = new Date().getHours() + 1;
 const minutes = new Date().getMinutes() + 1;
-const ourdate = new Date("01/01/2020 " + "10" + ":" + minutes + ":00");
+const ourdate = new Date("01", "01", "2020", "10", minutes, "00");
 let liste = "";
 console.log(ourdate);
 console.log(weekday);
+let hd;
+let hf;
+let hfav;
 
 if(weekday<6){
     for(let i = 0; i < 11; i++){
-        if(new Date("01/01/2020 " + hdebut[i] + ":00:00") < ourdate && new Date("01/01/2020 " + hfin[i] + ":00:00") > ourdate){
+        hd = hdebut[i].split(":")
+        hf = hfin[i].split(":")
+        hfav = hfin[i-1].split(":")
+        if(new Date("01", "01", "2020", hd[0], hd[1], "00") < ourdate && new Date("01", "01", "2020", hf[0], hf[1], "00") > ourdate){
             for(let j = 0; j < horaires.length; j++){
                 if(horaires[j].cours[weekday-1].split("")[i] == "0"){
                     if(liste == ""){
@@ -46,7 +52,7 @@ if(weekday<6){
             document.getElementById("textepresent").innerText = liste
             console.log(i)
             break;
-        }else if(new Date("01/01/2020 " + hdebut[i] + ":00:00") > ourdate && new Date("01/01/2020 " + hfin[i-1] + ":00:00") < ourdate){
+        }else if(new Date("01", "01", "2020", hd[0], hd[1], "00") > ourdate && new Date("01", "01", "2020", hfav[0], hfav[1], "00") < ourdate){
             document.getElementById("textepresent").innerText = " C'est la pause..."
         }
     }
