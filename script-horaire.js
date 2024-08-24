@@ -36,9 +36,13 @@ let hfav;
 
 if(weekday<6){
     for(let i = 0; i < 11; i++){
-        hd = hdebut[i].split(":")
-        hf = hfin[i].split(":")
-        hfav = hfin[i-1].split(":")
+        hd = hdebut[i].split(":");
+        hf = hfin[i].split(":");
+        if(i != 0){
+            hfav = hfin[i-1].split(":");
+        }else{
+            hfav = hfin[i].split(":");
+        }
         if(new Date("01", "01", "2020", hd[0], hd[1], "00") < ourdate && new Date("01", "01", "2020", hf[0], hf[1], "00") > ourdate){
             for(let j = 0; j < horaires.length; j++){
                 if(horaires[j].cours[weekday-1].split("")[i] == "0"){
