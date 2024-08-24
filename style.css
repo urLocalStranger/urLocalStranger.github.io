@@ -218,6 +218,7 @@ table{
   font-family: Arial, Helvetica, sans-serif;
   margin: 10px;
   border-spacing: 0px;
+  border: 2px solid #143d38;
 }
 
 .impair, .pair, .tableheader, .thn{
@@ -229,20 +230,19 @@ table{
 
 #tablediv{
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
-/*
+
+.impair{
+  background-color: white;
+}
+
 .pair{
-  height: 10px;
+  background-color: #f8f8f8;
 }
 
-.tableheader{
-  height: 10px;
+.thn, .tableheader{
+  background-color: #dfdfdf;
 }
-
-.thn{
-  height: 10px;
-}
-  */
