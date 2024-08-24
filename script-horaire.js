@@ -23,10 +23,10 @@ for(let i = 0; i < horaires.length; i++){
 
 const hdebut = ["08:00", "08:55", "09:50", "10:45", "11:40", "12:35", "13:30", "14:25", "15:20", "16:15", "17:10"]
 const hfin = ["08:50", "09:45", "10:40", "11:35", "12:30", "13:25", "14:20", "15:15", "16:10", "17:05", "18:00"]
-const weekday = 1;//new Date().getDay();
+const weekday = new Date().getDay();
 const hours = new Date().getHours() + 1;
 const minutes = new Date().getMinutes() + 1;
-const ourdate = new Date("01", "01", "2020", "10", minutes, "00");
+const ourdate = new Date("01", "01", "2020", hours, minutes, "00");
 let liste = "";
 console.log(ourdate);
 console.log(weekday);
@@ -53,15 +53,19 @@ if(weekday<6){
                     }
                 }
             }
-            document.getElementById("textepresent").innerText = liste
+            if(liste == ""){
+                document.getElementById("textepresent").innerText = " Personne de libre...";
+            }else{
+                document.getElementById("textepresent").innerText = liste
+            }
             console.log(i)
             break;
         }else if(new Date("01", "01", "2020", hd[0], hd[1], "00") > ourdate && new Date("01", "01", "2020", hfav[0], hfav[1], "00") < ourdate){
-            document.getElementById("textepresent").innerText = " C'est la pause..."
+            document.getElementById("textepresent").innerText = " C'est la pause...";
         }
     }
-    //document.getElementById("textepresent").innerText = " Bro... il y a personne..."
+    document.getElementById("textepresent").innerText = " Personne est au cegep...";
 }
 else{
-    document.getElementById("textepresent").innerText = " Bro... il y a personne..."
+    document.getElementById("textepresent").innerText = " Personne est au cegep...";
 }
