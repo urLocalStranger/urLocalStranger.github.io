@@ -211,9 +211,8 @@ label{
 }
 
 table{
-  /*width: 720px;
+  width: 720px;
   height: 480px;
-  align-items: center;*/
   font-family: Arial, Helvetica, sans-serif;
   margin: 10px;
   border-spacing: 0px;
