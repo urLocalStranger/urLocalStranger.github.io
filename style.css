@@ -232,6 +232,8 @@ table{
   justify-content: center;
   align-items: center;
   width: 100%;
+  position: relative; 
+  overflow: auto
 }
 
 .impair{
