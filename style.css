@@ -211,7 +211,7 @@ label{
 }
 
 table{
-  min-width: 720px;
+  min-width: 600px;
   min-height: 480px;
   font-family: Arial, Helvetica, sans-serif;
   border-spacing: 0px;
@@ -229,7 +229,7 @@ table{
 #tablediv{
   display: flex;
   width: 90%;
-  max-width: 720px;
+  max-width: 600px;
   overflow: auto;
   margin-left: 5%;
   margin-right: 5%;
