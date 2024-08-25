@@ -1,12 +1,12 @@
 let horaires = [
-    {name:"Roman\n", cours:["11111011011", "11100000000", "11100110000", "11011100111", "00011101100"]},
-    {name:"Zachary\n", cours:["00011101110", "11110000011", "00011011000", "00011001100", "01111101110"]},
-    {name:"Michelle\n", cours:["01100001100", "11100001110", "00011000110", "11111101100", "11011111100"]},
-    {name:"Mariya\n", cours:["11100110000", "11100000011", "11110110000", "11101111100", "01110011100"]},
-    {name:"Layal\n", cours:["11001110000", "11100000000", "11101101100", "11101111000", "11000111000"]},
-    {name:"Sarah-Jade\n", cours:["11111111100", "00110000011", "11111011100", "11101101110", "00000000011"]},
-    {name:"Gavriel\n", cours:["00111011011", "00110000000", "11100110111", "01110111000", "00111110000"]},
-    {name:"Viktor\n", cours:["00000110000", "01110001110", "00011001100", "00011101100", "00110011111"]}
+    {name:"Roman\n", cours:["11111011011", "1110xxxxxxx", "11100110xxx", "11011100111", "xx01110110x"]},
+    {name:"Zachary\n", cours:["xx011101110", "11110000011", "xx0110110xx", "xx01100110x", "01111101110"]},
+    {name:"Michelle\n", cours:["0110000110x", "11100001110", "xx011000110", "1111110110x", "1101111110x"]},
+    {name:"Mariya\n", cours:["11100110xxx", "11100000011", "11110110xxx", "1110111110x", "0111001110x"]},
+    {name:"Layal\n", cours:["11001110xxx", "1110xxxxxxx", "1110110110x", "111011110xx", "110001110xx"]},
+    {name:"Sarah-Jade\n", cours:["1111111110x", "x0110000011", "1111101110x", "11101101110", "xxxxxxxx011"]},
+    {name:"Gavriel\n", cours:["x0111011011", "x0110xxxxxx", "11100110111", "011101110xx", "x0111110xxx"]},
+    {name:"Viktor\n", cours:["xxxx0110xxx", "01110001110", "xx01100110x", "xx01110110x", "x0110011111"]}
 ]
 
 let arr;
@@ -26,10 +26,10 @@ for(let i = 0; i < horaires.length; i++){
 
 const hdebut = ["08:00", "08:55", "09:50", "10:45", "11:40", "12:35", "13:30", "14:25", "15:20", "16:15", "17:10"]
 const hfin = ["08:50", "09:45", "10:40", "11:35", "12:30", "13:25", "14:20", "15:15", "16:10", "17:05", "18:00"]
-const weekday = new Date().getDay();
-const hours = new Date().getHours() + 1;
+const weekday = 5;//new Date().getDay();
+const hours = 9;//new Date().getHours() + 1;
 const minutes = new Date().getMinutes() + 1;
-const ourdate = new Date("01", "01", "2020", hours, minutes, "00");
+const ourdate = new Date("01", "01", "2020", hours , minutes, "00");
 let liste = "";
 console.log(ourdate);
 console.log(weekday);
@@ -59,15 +59,17 @@ if(weekday<6){
             if(liste == ""){
                 document.getElementById("textepresent").innerText = " Personne de libre...";
             }else{
-                document.getElementById("textepresent").innerText = liste
+                document.getElementById("textepresent").innerText = liste.replace(/\n/gm,'')
             }
             console.log(i)
             break;
         }else if(new Date("01", "01", "2020", hd[0], hd[1], "00") > ourdate && new Date("01", "01", "2020", hfav[0], hfav[1], "00") < ourdate){
-            document.getElementById("textepresent").innerText = " C'est la pause...";
+            document.getElementById("textepresent").innerText = " C'est la pause... Tout le monde est libre...";
         }
     }
-    document.getElementById("textepresent").innerText = " Personne est au cegep...";
+    if(hours >= 18 || hours < 8){
+        document.getElementById("textepresent").innerText = " Personne est au cegep...";
+    }
 }
 else{
     document.getElementById("textepresent").innerText = " Personne est au cegep...";
