@@ -68,7 +68,7 @@ const searchbar = document.getElementById("searchbtn").addEventListener("click",
         for(let k = 0; k < 11; k++){
             target = document.getElementById(abcd[k] + String(j+1))
             if(target.innerText.includes(str) && str != ""){
-                target.style.backgroundColor = "#fffaad"
+                target.style.backgroundColor = "#bbf4bb"
             }
             else{
                 console.log("lol")
