@@ -12,23 +12,81 @@ let horaires = [
 let arr;
 let abcd = ["a","b","c","d","e","f","g","h","i","j","k"]
 
-for(let i = 0; i < horaires.length; i++){
+
+function tableaufxt(param){
+    for(let i = 0; i < horaires.length; i++){
+        for(let j = 0; j < 5; j++){
+            arr = horaires[i].cours[j].split("");
+            for(let k = 0; k < 11; k++){
+                console.log(abcd[k] + String(j))
+                if(param == "c"){
+                    if(arr[k] == "1"){
+                        document.getElementById(abcd[k] + String(j+1)).innerText += horaires[i].name
+                    }
+                }
+                else if(param == "d"){
+                    if(arr[k] == "0"){
+                        document.getElementById(abcd[k] + String(j+1)).innerText += horaires[i].name
+                    }
+                }
+                else{
+                    document.getElementById(abcd[k] + String(j+1)).innerText = ""
+                    for(let j = 0; j < 5; j++){
+                        for(let k = 0; k < 11; k++){
+                            if(document.getElementById(abcd[k] + String(j+1)).className == "impair"){
+                                document.getElementById(abcd[k] + String(j+1)).style.backgroundColor = "#ffffff";
+                            }else{
+                                document.getElementById(abcd[k] + String(j+1)).style.backgroundColor = "#f8f8f8";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    };
+}
+
+tableaufxt("c")
+
+const optcours = document.getElementById("drpdwn").addEventListener("click", function(){
+    if(document.getElementById("drpdwn").innerText != "Cours"){
+        tableaufxt("0")
+        tableaufxt("c")
+        document.getElementById("drpdwn").innerText = "Cours"
+    }else if(document.getElementById("drpdwn").innerText != "Dispo"){
+        tableaufxt("0")
+        tableaufxt("d")
+        document.getElementById("drpdwn").innerText = "Dispo"
+    }
+})
+
+let str;
+let target;
+const searchbar = document.getElementById("searchbtn").addEventListener("click", function(){
+    str = document.getElementById("search").value;
     for(let j = 0; j < 5; j++){
-        arr = horaires[i].cours[j].split("");
         for(let k = 0; k < 11; k++){
-            console.log(abcd[k] + String(j))
-            if(arr[k] == "1"){
-                document.getElementById(abcd[k] + String(j+1)).innerText += horaires[i].name
+            target = document.getElementById(abcd[k] + String(j+1))
+            if(target.innerText.includes(str) && str != ""){
+                target.style.backgroundColor = "#fffaad"
+            }
+            else{
+                console.log("lol")
+                if(target.className == "impair"){
+                    target.style.backgroundColor = "#ffffff";
+                }else{
+                    target.style.backgroundColor = "#f8f8f8";
+                }
             }
         }
     }
-};
+})
 
 const hdebut = ["08:00", "08:55", "09:50", "10:45", "11:40", "12:35", "13:30", "14:25", "15:20", "16:15", "17:10"]
 const hfin = ["08:50", "09:45", "10:40", "11:35", "12:30", "13:25", "14:20", "15:15", "16:10", "17:05", "18:00"]
-const weekday = new Date().getDay();
-const hours = new Date().getHours() + 1;
-const minutes = new Date().getMinutes() + 1;
+const weekday = new Date().getDay() - 1;
+const hours = new Date().getHours();
+const minutes = new Date().getMinutes();
 const ourdate = new Date("01", "01", "2020", hours , minutes, "00");
 let liste = "";
 console.log(ourdate);
@@ -37,7 +95,8 @@ let hd;
 let hf;
 let hfav;
 
-if(weekday<6){
+if(weekday<5 && weekday>=0){
+    console.log(weekday);
     for(let i = 0; i < 11; i++){
         hd = hdebut[i].split(":");
         hf = hfin[i].split(":");
@@ -68,9 +127,11 @@ if(weekday<6){
         }
     }
     if(hours >= 18 || hours < 8){
-        document.getElementById("textepresent").innerText = " Personne est au cegep...";
+        document.getElementById("textepresent").innerText = " Personne est au cégep...";
     }
 }
 else{
-    document.getElementById("textepresent").innerText = " Personne est au cegep...";
+    document.getElementById("textepresent").innerText = " Personne est au cégep...";
 }
+
+

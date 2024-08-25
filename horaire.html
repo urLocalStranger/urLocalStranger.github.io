@@ -4,9 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <meta http-equiv="refresh" content="60">
   <title>Horaire</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="style-horaire.css" rel="stylesheet" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Alfa+Slab+One&display=swap" rel="stylesheet">
@@ -23,12 +22,28 @@
       <div class="menuBtns">Menu</div>
     </a>
   </nav>
+
   <div style="display: flex; justify-content: center; margin-top: 3%">
     <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 600; margin-bottom: 0px;text-align: center;">Les gens disponibles mtn sont: </h3>
   </div>
+
   <div style="display: flex; justify-content: center; align-items: center;">
     <h3 id="textepresent" style="font-family: Arial, Helvetica, sans-serif; font-weight: 600; margin-left: 10%; margin-right: 10%;text-align: center;"></h3>
   </div>
+
+  <div style="display: flex; justify-content: center; margin-top: 16px;">
+    <div style="display: flex; justify-content: space-between; width: 650px;">
+      <div class="dropdown">
+        <button class="dropbtn" id="drpdwn">Cours</button>
+      </div>
+
+      <div style="display: flex; justify-content: center; align-items: center;margin-right: 5%;">
+        <input id="search" style="border: 2px solid #143d38; font-size: medium; font-weight: 400; margin-bottom: 0%; height: 20px; width: 160px;">
+        <button class="btn" id="searchbtn" style="border-radius: 0%; border: 2px solid #143d38; height: 25px; width: 25px; font-size: small;display: flex; justify-content: center; align-items: center; border-left: 0px;">🔍</button>
+      </div>
+    </div>
+  </div>
+
   <div>
   <div id="tablediv">
     <table>
