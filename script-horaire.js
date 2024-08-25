@@ -26,8 +26,8 @@ for(let i = 0; i < horaires.length; i++){
 
 const hdebut = ["08:00", "08:55", "09:50", "10:45", "11:40", "12:35", "13:30", "14:25", "15:20", "16:15", "17:10"]
 const hfin = ["08:50", "09:45", "10:40", "11:35", "12:30", "13:25", "14:20", "15:15", "16:10", "17:05", "18:00"]
-const weekday = 5;//new Date().getDay();
-const hours = 9;//new Date().getHours() + 1;
+const weekday = new Date().getDay();
+const hours = new Date().getHours() + 1;
 const minutes = new Date().getMinutes() + 1;
 const ourdate = new Date("01", "01", "2020", hours , minutes, "00");
 let liste = "";
