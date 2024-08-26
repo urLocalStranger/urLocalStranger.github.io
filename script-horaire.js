@@ -1,11 +1,11 @@
 let horaires = [
-    {name:"Roman\n", cours:["11111011011", "1110xxxxxxx", "11100110xxx", "11011100111", "xx01110110x"]},
+    {name:"Roman\n", cours:["11112011011", "1110xxxxxxx", "11100110xxx", "11011100111", "xx01110110x"]},
     {name:"Zachary\n", cours:["xx011101110", "11110000011", "xx0110110xx", "xx01100110x", "01111101110"]},
-    {name:"Michelle\n", cours:["0110000110x", "11100001110", "xx011000110", "1111110110x", "1101111110x"]},
+    {name:"Michelle\n", cours:["0120000110x", "11100001110", "xx011000110", "1111110110x", "1101111110x"]},
     {name:"Mariya\n", cours:["11100110xxx", "11100000011", "11110110xxx", "1110111110x", "0111001110x"]},
     {name:"Layal\n", cours:["11001110xxx", "1110xxxxxxx", "1110110110x", "111011110xx", "110001110xx"]},
-    {name:"Sarah-Jade\n", cours:["1111111110x", "x0110000011", "1111101110x", "11101101110", "xxxxxxxx011"]},
-    {name:"Gavriel\n", cours:["x0111011011", "x0110xxxxxx", "11100110111", "011101110xx", "x0111110xxx"]},
+    {name:"Sarah-Jade\n", cours:["1111111110x", "01110000011", "1111101110x", "11101101110", "xxxxxxxx011"]},
+    {name:"Gavriel\n", cours:["x0112011011", "x0110xxxxxx", "11100110111", "011101110xx", "x0111110xxx"]},
     {name:"Victor\n", cours:["xxxx0110xxx", "01110001110", "xx01100110x", "xx01110110x", "x0110011111"]}
 ]
 
@@ -20,12 +20,12 @@ function tableaufxt(param){
             for(let k = 0; k < 11; k++){
                 console.log(abcd[k] + String(j))
                 if(param == "c"){
-                    if(arr[k] == "1"){
+                    if(arr[k] == "1" || arr[k] == "2"){
                         document.getElementById(abcd[k] + String(j+1)).innerText += horaires[i].name
                     }
                 }
                 else if(param == "d"){
-                    if(arr[k] == "0"){
+                    if(arr[k] == "0" || arr[k] == "2"){
                         document.getElementById(abcd[k] + String(j+1)).innerText += horaires[i].name
                     }
                 }
