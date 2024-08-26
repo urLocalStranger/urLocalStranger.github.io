@@ -12,31 +12,47 @@ let horaires = [
 let arr;
 let abcd = ["a","b","c","d","e","f","g","h","i","j","k"]
 
+function getSelectValues(select) {
+    var result = [];
+    var options = select && select.options;
+    var opt;
+
+    for (var i=0, iLen=options.length; i<iLen; i++) {
+        opt = options[i];
+
+        if (opt.selected) {
+        result.push(opt.value || opt.text);
+        }
+    }
+    return result;
+}
 
 function tableaufxt(param){
     for(let i = 0; i < horaires.length; i++){
-        for(let j = 0; j < 5; j++){
-            arr = horaires[i].cours[j].split("");
-            for(let k = 0; k < 11; k++){
-                console.log(abcd[k] + String(j))
-                if(param == "c"){
-                    if(arr[k] == "1" || arr[k] == "2"){
-                        document.getElementById(abcd[k] + String(j+1)).innerText += horaires[i].name
+        if(getSelectValues(document.getElementById("selection")).includes(String(i))){
+            for(let j = 0; j < 5; j++){
+                arr = horaires[i].cours[j].split("");
+                for(let k = 0; k < 11; k++){
+                    console.log(abcd[k] + String(j))
+                    if(param == "c"){
+                        if(arr[k] == "1" || arr[k] == "2"){
+                            document.getElementById(abcd[k] + String(j+1)).innerText += horaires[i].name
+                        }
                     }
-                }
-                else if(param == "d"){
-                    if(arr[k] == "0" || arr[k] == "2"){
-                        document.getElementById(abcd[k] + String(j+1)).innerText += horaires[i].name
+                    else if(param == "d"){
+                        if(arr[k] == "0" || arr[k] == "2"){
+                            document.getElementById(abcd[k] + String(j+1)).innerText += horaires[i].name
+                        }
                     }
-                }
-                else{
-                    document.getElementById(abcd[k] + String(j+1)).innerText = ""
-                    for(let j = 0; j < 5; j++){
-                        for(let k = 0; k < 11; k++){
-                            if(document.getElementById(abcd[k] + String(j+1)).className == "impair"){
-                                document.getElementById(abcd[k] + String(j+1)).style.backgroundColor = "#ffffff";
-                            }else{
-                                document.getElementById(abcd[k] + String(j+1)).style.backgroundColor = "#f8f8f8";
+                    else{
+                        document.getElementById(abcd[k] + String(j+1)).innerText = ""
+                        for(let j = 0; j < 5; j++){
+                            for(let k = 0; k < 11; k++){
+                                if(document.getElementById(abcd[k] + String(j+1)).className == "impair"){
+                                    document.getElementById(abcd[k] + String(j+1)).style.backgroundColor = "#ffffff";
+                                }else{
+                                    document.getElementById(abcd[k] + String(j+1)).style.backgroundColor = "#f8f8f8";
+                                }
                             }
                         }
                     }
@@ -47,8 +63,11 @@ function tableaufxt(param){
 }
 
 tableaufxt("c")
+const slct = document.getElementById("selection").addEventListener("change", reset)
 
-const optcours = document.getElementById("drpdwn").addEventListener("click", function(){
+const optcours = document.getElementById("drpdwn").addEventListener("click", reset)
+
+function reset(){
     if(document.getElementById("drpdwn").innerText != "Cours"){
         tableaufxt("0")
         tableaufxt("c")
@@ -58,7 +77,7 @@ const optcours = document.getElementById("drpdwn").addEventListener("click", fun
         tableaufxt("d")
         document.getElementById("drpdwn").innerText = "Dispo"
     }
-})
+}
 
 let str;
 let target;
