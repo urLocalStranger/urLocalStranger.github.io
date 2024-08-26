@@ -82,7 +82,7 @@ const searchbar = document.getElementById("searchbtn").addEventListener("click",
     }
 })
 
-const hdebut = ["08:00", "08:55", "09:50", "10:45", "11:40", "12:35", "13:30", "14:25", "15:20", "16:15", "17:10"]
+/*const hdebut = ["08:00", "08:55", "09:50", "10:45", "11:40", "12:35", "13:30", "14:25", "15:20", "16:15", "17:10"]
 const hfin = ["08:50", "09:45", "10:40", "11:35", "12:30", "13:25", "14:20", "15:15", "16:10", "17:05", "18:00"]
 const weekday = new Date().getDay() - 1;
 const hours = new Date().getHours();
@@ -132,6 +132,6 @@ if(weekday<5 && weekday>=0){
 }
 else{
     document.getElementById("textepresent").innerText = " Personne est au cégep...";
-}
+}*/
 
 
