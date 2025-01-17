@@ -1,28 +1,29 @@
 let horaires = [
-    {name:"Roman\n", cours:["11112011011", "1110xxxxxxx", "11100110xxx", "11011100111", "xx01110110x"]},
-    {name:"Zachary\n", cours:["xx011101110", "11110000011", "xx0110110xx", "xx01100110x", "01111101110"]},
-    {name:"Michelle\n", cours:["0120000110x", "11100001110", "xx011000110", "1111110110x", "1101111110x"]},
-    {name:"Mariya\n", cours:["11100110xxx", "1110xxxx011", "11110110xxx", "1110111110x", "0111001110x"]},
-    {name:"Layal\n", cours:["11001110xxx", "1110xxxxxxx", "1110110110x", "111011110xx", "110001110xx"]},
-    {name:"Sarah-Jade\n", cours:["1111111110x", "01110000011", "1111101110x", "11101101110", "xxxxxxxx011"]},
-    {name:"Gavriel\n", cours:["x0112011011", "x0110xxxxxx", "11100110111", "011101110xx", "x0111110xxx"]},
-    {name:"Victor\n", cours:["xxxx0110xxx", "01110001110", "xx01100110x", "xx01110110x", "x0110011111"]},
-    {name:"Xinqi\n", cours:["11100000111", "11000001111", "x01110xxxxx", "11111100111", "11100110xxx"]}
+    {name:"Roman\n", cours:["112110xx011", "11100001112", "1111201110x", "1100110xxxx", "xxxxxxx0110"]}, 
+    {name:"Zachary\n", cours:["xx011000110", "xxxxxx01111", "11111011111", "11101111100", "x0110011111"]},
+    {name:"Michelle\n", cours:["xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx"]}, 
+    {name:"Mariya\n", cours:["0110112110x", "11000001120", "1111011120x", "11100110112", "110xxxxxxxx"]},
+    {name:"Layal\n", cours:["111011110xx", "0111000110x", "1111201110x", "x01110110xx", "11001110xxx"]},
+    {name:"Sarah-Jade\n", cours:["xxxxxxxxxxx", "x0110000011", "11101120xxx", "x0110001110", "xxxxxxxxxxx"]},
+    {name:"Gavriel\n", cours:["xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx"]},
+    {name:"Victor\n", cours:["xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx"]},
+    {name:"Xinqi\n", cours:["xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx"]}
 ]
 
-let arr;
-let abcd = ["a","b","c","d","e","f","g","h","i","j","k"]
+let arr, cases;
+let denied = [];
+let abcd = ["a","b","c","d","e","f","g","h","i","j","k"];
 
 function getSelectValues(select) {
-    var result = [];
-    var options = select && select.options;
-    var opt;
+    let result = [];
+    let options = select && select.options;
+    let opt;
 
-    for (var i=0, iLen=options.length; i<iLen; i++) {
+    for (let i=0, iLen=options.length; i<iLen; i++) {
         opt = options[i];
 
         if (opt.selected) {
-        result.push(opt.value || opt.text);
+            result.push(opt.value || opt.text);
         }
     }
     return result;
@@ -34,33 +35,36 @@ function tableaufxt(param){
             for(let j = 0; j < 5; j++){
                 arr = horaires[i].cours[j].split("");
                 for(let k = 0; k < 11; k++){
-                    console.log(abcd[k] + String(j))
+                    cases = document.getElementById(abcd[k] + String(j+1))
                     if(param == "c"){
                         if(arr[k] == "1" || arr[k] == "2"){
-                            document.getElementById(abcd[k] + String(j+1)).innerText += horaires[i].name
+                            cases.innerText += horaires[i].name
+                        }else if(arr[k] == "x"){
+                            denied.push(abcd[k] + String(j+1))
                         }
                     }
                     else if(param == "d"){
                         if(arr[k] == "0" || arr[k] == "2"){
-                            document.getElementById(abcd[k] + String(j+1)).innerText += horaires[i].name
+                            cases.innerText += horaires[i].name
                         }
                     }
                     else{
-                        document.getElementById(abcd[k] + String(j+1)).innerText = ""
+                        cases.innerText = ""
                         for(let j = 0; j < 5; j++){
                             for(let k = 0; k < 11; k++){
-                                if(document.getElementById(abcd[k] + String(j+1)).className == "impair"){
-                                    document.getElementById(abcd[k] + String(j+1)).style.backgroundColor = "#ffffff";
+                                if(cases.className == "impair"){
+                                    cases.style.backgroundColor = "#ffffff";
                                 }else{
-                                    document.getElementById(abcd[k] + String(j+1)).style.backgroundColor = "#f8f8f8";
+                                    cases.style.backgroundColor = "#f8f8f8";
                                 }
                             }
                         }
                     }
+
                 }
             }
         }
-    };
+    }
 }
 
 tableaufxt("c")
@@ -69,14 +73,14 @@ const slct = document.getElementById("selection").addEventListener("change", res
 const optcours = document.getElementById("drpdwn").addEventListener("click", reset)
 
 function reset(){
-    if(document.getElementById("drpdwn").innerText != "Cours"){
-        tableaufxt("0")
+    btntext = document.getElementById("drpdwn")
+    tableaufxt("0")
+    if(btntext.innerText != "Cours"){
         tableaufxt("c")
-        document.getElementById("drpdwn").innerText = "Cours"
-    }else if(document.getElementById("drpdwn").innerText != "Dispo"){
-        tableaufxt("0")
+        btntext.innerText  = "Cours"
+    }else{
         tableaufxt("d")
-        document.getElementById("drpdwn").innerText = "Dispo"
+        btntext.innerText = "Dispo"
     }
 }
 
@@ -90,8 +94,10 @@ const searchbar = document.getElementById("searchbtn").addEventListener("click",
             if(target.innerText.includes(str) && str != ""){
                 target.style.backgroundColor = "#fffcbd"
             }
+            /*if(target.innerText == "" && denied.includes(abcd[k] + String(j+1)) == false){
+                target.style.backgroundColor = "#89f590"
+            }*/
             else{
-                console.log("lol")
                 if(target.className == "impair"){
                     target.style.backgroundColor = "#ffffff";
                 }else{
@@ -152,6 +158,6 @@ if(weekday<5 && weekday>=0){
 }
 else{
     document.getElementById("textepresent").innerText = " Personne est au cégep...";
-}*/
-
+}
+*/
 
