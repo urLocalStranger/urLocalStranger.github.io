@@ -7,7 +7,7 @@ let horaires = [
     {name:"Sarah-Jade\n", cours:["xxxxxxxxxxx", "x0110000011", "11101120xxx", "x0110001110", "xxxxxxxxxxx"]},
     {name:"Gavriel\n", cours:["xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx"]},
     {name:"Victor\n", cours:["xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx"]},
-    {name:"Xinqi\n", cours:["xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx"]}
+    {name:"Xinqi\n", cours:["1100110xxxx", "x0110001111", "11110000111", "111110110xx", "112110xxxxx"]}
 ]
 
 let arr, cases;
