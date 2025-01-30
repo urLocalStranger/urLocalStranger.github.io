@@ -1,11 +1,11 @@
 let horaires = [
-    {name:"Roman\n", cours:["112110xx011", "11100001112", "1111201110x", "1100110xxxx", "xxxxxxx0110"]}, 
-    {name:"Zachary\n", cours:["xx011000110", "xxxxxx01111", "11111011111", "11101111100", "x0110011111"]},
-    {name:"Michelle\n", cours:["xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx"]}, 
-    {name:"Mariya\n", cours:["0110112110x", "11000001120", "1111011120x", "11100110112", "110xxxxxxxx"]},
+    {name:"Roman\n", cours:["1120110110x", "1110xx01110", "1111000110x", "1100112xxxx", "xxx01120011"]}, 
+    {name:"Zachary\n", cours:["xx011000110", "xxxxxx01111", "11112011111", "11101111100", "x0110011111"]},
+    {name:"Michelle\n", cours:["01111110xxx", "xxxxxx01111", "x0111001111", "xxx01101110", "xxxxxxxxxxx"]}, 
+    {name:"Mariya\n", cours:["0110112110x", "110xxxxx011", "11110110xxx", "11100110112", "110112xxxxx"]},
     {name:"Layal\n", cours:["111011110xx", "0111000110x", "1111201110x", "x01110110xx", "11001110xxx"]},
     {name:"Sarah-Jade\n", cours:["xxxxxxxxxxx", "x0110000011", "11101120xxx", "x0110001110", "xxxxxxxxxxx"]},
-    {name:"Gavriel\n", cours:["xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx"]},
+    {name:"Gavriel\n", cours:["xxxx0110011", "11100001111", "x0110000110", "x0110110011", "xx011100110"]},
     {name:"Victor\n", cours:["xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx", "xxxxxxxxxxx"]},
     {name:"Xinqi\n", cours:["1100110xxxx", "x0110001111", "11110000111", "111110110xx", "112110xxxxx"]}
 ]
