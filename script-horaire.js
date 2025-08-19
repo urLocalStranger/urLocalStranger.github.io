@@ -2,7 +2,7 @@ let horaires = [
     {name:"Roman\n", cours:["1101110112x", "1110xxxx011", "xxx01110110", "xxx01110xxx", "xxx01100111"]}, 
     //{name:"Zachary\n", cours:["xx011000110", "xxxxxx01111", "11112011111", "11101111100", "x0110011111"]},
     //{name:"Michelle\n", cours:["01111110xxx", "xxxxxx01111", "x0111001111", "xxx01101110", "xxxxxxxxxxx"]}, 
-    {name:"Mariya\n", cours:["11111000111", "x0110xxx011", "xxx01110110", "xxxx01110xx", "x0110xx0111"]},
+    {name:"Mariya\n", cours:["11111000111", "11110xxx011", "xxx01110xxx", "xxxx01110xx", "xxx01100111"]},
     //{name:"Layal\n", cours:["111011110xx", "0111000110x", "1111201110x", "x01110110xx", "11001110xxx"]},
     //{name:"Sarah-Jade\n", cours:["xxxxxxxxxxx", "x0110000011", "11101120xxx", "x0110001110", "xxxxxxxxxxx"]},
     {name:"Gavriel\n", cours:["11111001100", "x0110001100", "xxxxxx01110", "xx011100011", "xx011101110"]},
